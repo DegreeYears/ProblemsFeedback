@@ -1,0 +1,97 @@
+﻿body {
+}
+
+#mainForm {
+}
+
+#mainDiv {
+    height:100%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#titleDiv {
+    color: #ffffff;
+    background: #e3e0e0;
+    height: 100px;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+    float: left;
+    margin:0px;
+    width:100%;
+}
+
+#contentDiv {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    margin-top: 10px;
+    bottom: 5px;
+    float: left;
+}
+
+#leftDiv {
+    border: 0px;
+    width: 20%;
+    height: 700px;
+    float: left;
+    background: #e3e0e0;
+}
+
+#rightDiv {
+    float: right;
+    border: 0px;
+    background: white;
+    height: 700px;
+    width:78%;
+    text-align:center;
+}
+
+iframe {
+    border: 0px;
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+.oneList {
+    display: inline-block;
+    width: 80%;
+    line-height: 40px;
+    border: 0px;
+    background: #cbc9c9;
+    cursor: pointer;
+    margin-top: 20px;
+    list-style-type: none;
+    text-align: center;
+    color: #ffffff;
+}
+
+.oneList > span {
+    margin-left: 10px;
+}
+
+.oneListUl {
+    display: none;
+    border: 0px;
+}
+
+.oneListUl > li {
+    border: 0px;
+    margin-top: 10px;
+    line-height: 25px;
+    background: #cbc9c9;
+    text-align: center;
+    width: 80%;
+}
+
+.oneListUl > li > a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.MenuUl, .menuList > ul {
+    list-style-type: none;
+}
