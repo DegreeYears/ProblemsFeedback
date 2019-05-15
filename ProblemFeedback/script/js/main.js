@@ -1,26 +1,42 @@
 ﻿$(function () {
-    $('.menuList').click(function () {
-        $(this).children('ul').slideDown();
-        $(this).siblings().children('ul').slideUp();
-    });
-    //iframe页面跳转 动态修改页面
-    //可优化
-    //已优化
-    $('.oneListUl').children('li').click(function () {
-        var name = $(this).attr('id');
-        //$('.mainIframe').attr('src', 'submit/' + name + '.aspx');
-        $('.mainIframe').attr('src', 'submit/SubmitSell.aspx');
-        //监听iframe异步资源加载
-        $('.mainIframe').load(function () {
-           $(this).contents().find(".titleDiv").html(name + "问题反馈");
+    $(function () {
+        $(".menuList").children("span").hover(function () {
+            if ($(this).css("background-color") == 'rgb(238,82,54)') {
+            } else {
+                $(this).css("color", "#DE3812");
+            }
+        }, function () {
+            $(this).css("color", "white");
+        });
+        $(".oneList").click(function () {
+            for (var i = 1; i < 6; i++) {
+                $("#oneList" + i).css("background-color", "#26212f");
+            }
+            $(this).css("background-color", "#ee5236");
+            $(this).css("color", "white");
+        });
+        //iframe页面跳转 动态修改页面
+        $(".oneList").click(function () {
+            if ($(this).attr("id") == "oneList1") {
+                $('.mainIframe').attr('src', 'hot/HotProblems.aspx');
+            }
+            if ($(this).attr("id") == "oneList2") {
+                $('.mainIframe').attr('src', 'submit/ProblemsSubmit.aspx');
+            }
+            if ($(this).attr("id") == "oneList3") {
+                $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx');
+            }
+            if ($(this).attr("id") == "oneList4") {
+                $('.mainIframe').attr('src', 'summary/ProblemsSummary.aspx');
+            }
+            if ($(this).attr("id") == "oneList5") {
+                $('.mainIframe').attr('src', 'others/OthersProblems.aspx');
+            }
+            //监听iframe异步资源加载
+            //$('.mainIframe').load(function () {
+            //    $(this).contents().find(".titleDiv").html(name + "问题反馈");
+            //});
         });
     });
-    //滑过变色
-    $('.oneListUl').children('li').hover(function () {
-        $(this).children('a').css('color', '#cbc9c9');
-        $(this).css('background-color', 'white');
-    }, function () {
-            $(this).css('background-color', '#cbc9c9');
-            $(this).children('a').css('color', 'white');
-        });
 });
+

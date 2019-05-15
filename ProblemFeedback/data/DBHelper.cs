@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -13,58 +14,55 @@ namespace ProblemFeedback.data
     {
         private SqlConnection con = null;
         private SqlCommand cmd = null;
-        private string conStr = "Data Source=./sqlexpress;Integrated Security = SSPI; database=problemsSubmit";
-        //数据库连接
-        public void Con() {
+        private string conStr = @"server=.\sqlexpress;database=problemsSubmit;integrated security=true";
+        /// <summary>
+        /// 查询表数据结果集
+        /// </summary>
+        public DataSet SelectData(string strSql) {
             try
             {
                 using (con = new SqlConnection(conStr))
                 {
                     con.Open();
-                    Console.WriteLine("数据库已打开");
-                    cmd = con.CreateCommand();
-                    cmd.CommandText = "select * from ProblemsInfo";
-                    Console.WriteLine(cmd.ExecuteNonQuery());
+                    cmd = new SqlCommand(strSql,con);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                    DataSet dataSet = new DataSet();
+                    sqlDataAdapter.Fill(dataSet);
+                    return dataSet;
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                //异常写入日志
+                return null;
             }
         }
-        //增
-        public void AddData() {
+        /// <summary>
+        /// 添加记录
+        /// </summary>
+        public int AddData() {
+            try
+            {
+                using (con = new SqlConnection(conStr))
+                {
+                    string strSql = "";
+                    con.Open();
+                    cmd = new SqlCommand(strSql, con);
+                    int result = cmd.ExecuteNonQuery();
+                    return result;
+                }
+            }
+            catch (Exception e)
+            {
+                //异常写入日志
+                return 0;
+            }
         }
         //删
         public void DeleteData() {
         }
         //改
         public void UpdateData() {
-        }
-        //查
-        public void SelectData() {
-            //返回数据集
-            using (SqlConnection cnn = new SqlConnection(conStr))
-            {
-                cnn.Open();
-                SqlCommand cmd = cnn.CreateCommand();
-                cmd.CommandText = "";
-                IAsyncResult ar = cmd.BeginExecuteReader();
-                using (SqlDataReader dr = cmd.EndExecuteReader(ar))
-                {
-                    // 显示字段名
-                    for (int i = 0; i < dr.FieldCount; i++)
-                        Console.Write(dr.GetName(i).PadRight(16));
-                    Console.WriteLine();
-                    // 显示记录
-                    while (dr.Read())
-                    {
-                        for (int i = 0; i < dr.FieldCount; i++)
-                            Console.Write("{0}".PadRight(16), dr[i]);
-                        Console.WriteLine();
-                    }
-                }
-            }
         }
     }
 }

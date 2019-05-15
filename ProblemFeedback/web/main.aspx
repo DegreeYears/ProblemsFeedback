@@ -14,51 +14,26 @@
     <form id="mainForm" runat="server">
         <div id="mainDiv">
             <div id="titleDiv">
-                问题反馈平台
+                <img class="titleDiv_titleLogo" src="../img/talk.png"/>
+                <span>问题反馈平台</span> 
+                <div class="titleFindDiv">
+                    <input class="titleFindText" placeholder="搜索话题" />
+                    <img  class="titleFindImg" src="../img/find.png" />
+                </div>
             </div>
             <div id="contentDiv">
                 <div id="leftDiv">
                     <ul id="menuUl" class="MenuUl">
-                        <li class="menuList"><span class="oneList" >反馈提交</span>
-                            <ul class="oneListUl" id="sub1">
-                                <li class="SubmitSellLi" id="销售相关"><a href="#">销售相关</a></li>
-                                <li class="SubmitPurchaseLi" id="采购相关"><a href="#">采购相关</a></li>
-                                <li class="SubmitProductLi" id="生产相关"><a href="#">生产相关</a></li>
-                                <li class="SubmitInventLi" id="库存相关"><a href="#">库存相关</a></li>
-                                <li class="SubmitSystemLi" id="系统相关"><a href="#">系统相关</a></li> 
-                            </ul>
-                        </li>
-                        <li class="menuList"><span class="oneList">反馈解决</span>
-                            <ul class="oneListUl" id="sub2">
-                                <li><a href="#">销售相关</a></li>
-                                <li><a href="#">采购相关</a></li>
-                                <li><a href="#">生产相关</a></li>
-                                <li><a href="#">库存相关</a></li>
-                                <li><a href="#">系统相关</a></li> 
-                            </ul>
-                        </li>
-                        <li class="menuList"><span class="oneList" >反馈汇总</span>
-                            <ul class="oneListUl" id="sub3">
-                                <li><a href="#">销售相关</a></li>
-                                <li><a href="#">采购相关</a></li>
-                                <li><a href="#">生产相关</a></li>
-                                <li><a href="#">库存相关</a></li>
-                                <li><a href="#">系统相关</a></li> 
-                            </ul>
-                        </li>
-                        <li class="menuList"><span class="oneList">其他反馈</span>
-                            <ul class="oneListUl" id="sub4">
-                                <li><a href="#">销售相关</a></li>
-                                <li><a href="#">采购相关</a></li>
-                                <li><a href="#">生产相关</a></li>
-                                <li><a href="#">库存相关</a></li>
-                                <li><a href="#">系统相关</a></li> 
-                            </ul>
+                        <li class="menuList"><span class="oneList" id="oneList1">热门问题</span></li>
+                        <li class="menuList"><span class="oneList" id="oneList2">我有问题</span></li>
+                        <li class="menuList"><span class="oneList"id="oneList3">我来解决</span></li>
+                        <li class="menuList"><span class="oneList" id="oneList4">问题汇总</span></li>
+                        <li class="menuList"><span class="oneList"id="oneList5">其他疑问</span>
                         </li>
                     </ul>
                 </div>
                 <div id="rightDiv">
-                    <iframe class="mainIframe" runat="server" src="submit/SubmitSell.aspx" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
+                    <iframe class="mainIframe" runat="server" src="hot/HotProblems.aspx" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
                 </div>
             </div>
         </div>

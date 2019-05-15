@@ -4,28 +4,22 @@
         var content = $(".text").val();
         var person = $(".submitB").val();
         var department = $(".submitD").val();
-        var img1 = $(".imageUp1").url();
-        var img2 = $(".imageUp2").url();
-        var img3 = $(".imageUp3").url();
+        var img1 = $(".imageUp1").attr('src');
+        var img2 = $(".imageUp2").attr('src');
+        var img3 = $(".imageUp3").attr('src');
         if (content && person) {
             $.ajax({
                 type: "post",
                 url: "SubmitSell.aspx/SubmitClick",
                 contentType: "application/json; charset=utf-8",
-                data: "{'contents':'content','personName':'person','department':'department','imageUp1':'img1','imageUp2':'img2','imageUp3':'img3'}",
+                data: "{'contents':'" + content + "','personName':'" + person + "','department':'" + department + "','imageUp1':'" + img1 + "','imageUp2':'" + img2 + "','imageUp3':'" + img3+"'}",
                 dataType: "json",
                 success: function (msg) {
                     alert("提交成功！");
-                    $(".text").val() = null;
-                    $(".submitB").val() = null;
-                    $(".submitD").val() = null;
-                    $(".imageUp1").url() = "";
-                    $(".imageUp2").url() = "";
-                    $(".imageUp3").url() = "";
+                    window.location.reload();
                 },
                 error: function (err) {
                     alert("数据库处理错误，保存失败！");
-                    console.log(err);
                 }
             });
         } else {
@@ -34,29 +28,31 @@
     });
     //图片上传事件
     $(".imgUploadBtn").click(function () {
-        var fileName = $(".fileName").fileName();
-        var fileType = System.IO.Path.GetExtension(fileName).ToLower();
-        var imgType = new Array(".gif", ".jpg", ".png", ".bpm");
-        var img1 = $(".imageUp1").url();
-        var img2 = $(".imageUp2").url();
-        var img3 = $(".imageUp3").url();
-        var imgTypeis = flase;
+        var pathName = $(".fileUpload").val();
+        var fileName = pathName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi, "$1");
+        var fileType = pathName.replace(/.+\./, "");
+        var imgType = new Array("gif", "jpg", "png", "bpm");
+        var img1 = $("#imageUp1").attr('src');
+        var img2 = $("#imageUp2").attr('src');
+        var img3 = $("#imageUp3").attr('src');
+        var imgTypeis = 0;
         var imgFlag = 0;
-        var upFile = $(".fileName").files[0];
-        if (fileName == "" || fileName == null) {
+        //获得文件对象
+        var upFile = $(".fileUpload")[0].files[0];
+        if (fileName == "" || fileName == null || pathName == "../../img/imgIn.png") {
             alert("上传文件不能为空！");
         }
         else {
-            if ((img1 == "" || img1 == null) && (img2 == "" || img2 == null) && (img3 == "" || img3 == null)) {
-                for (var i = 0; i < imgType.Length; i++) {
+            if (img3 == "" || img3 == null || img3 == "../../img/imgIn.png") {
+                for (var i = 0; i < imgType.length; i++) {
                     if (fileType == imgType[i]) {
-                        imgTypeis = true;
+                        imgTypeis = 1;
                     }
                 }
-                if (img1 == "" || img1 == null) {
+                if (img1 == "" || img1 == null || img1 == "../../img/imgIn.png") {
                     imgFlag == 0;
                 } else {
-                    if (img2 == "" || img2 == null) {
+                    if (img2 == "" || img2 == null || img2 == "../../img/imgIn.png") {
                         imgFlag == 1;
                     }
                     else {
@@ -64,13 +60,17 @@
                     }
                 }
                 if (imgTypeis) {
-                    if ($(".fileName").size() <= (5 * 1024 * 1024)) {
+                    if (upFile.size <= (5 * 1024 * 1024)) {
+                        var formData = new FromData($("#form1")[0]);
                         $.ajax({
                             type: "post",
                             url: "SubmitSell.aspx/ImgUploadBtnClick",
                             contentType: "application/json; charset=utf-8",
-                            data: "{'upFile':'upFile'}",
-                            dataType: "json",
+                            //data: "{'upFile':'"+upFile+"'}",
+                            data: formData,
+                            //dataType: "json",
+                            processData: false,
+                            contentType: false,
                             success: function (msg) {
                                 if (imgFlag == 0) {
                                     img1 = "../img/uploadImg/" + fileName;
@@ -83,7 +83,7 @@
                                 }
                                 alert("上传成功！");
                             },
-                            error: function (err) {
+                            error: function (erro) {
                                 alert("上传失败！");
                             }
                         });

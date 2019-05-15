@@ -1,0 +1,203 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.mainDiv {
+    padding: 40px;
+}
+
+.problemDiv {
+    height: 500px;
+    background-color: #f6f2f2;
+}
+
+.problem_titleDiv {
+}
+
+.problem_titleDiv_1 {
+    font-family: SimHei;
+    font-weight: 600;
+    font-size: 21px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left:40px;
+}
+
+.problem_titleDiv_2 {
+    height: 30px;
+    padding-left: 40px;
+}
+
+.problem_titleDiv_2_left {
+    color: #808080;
+    font-size: 15px;
+}
+
+.problem_titleDiv_2_left_3, .problem_titleDiv_2_left_2, .problem_titleDiv_2_left_1 {
+    float: right;
+    height: 30px;
+    width: 100px;
+    position: relative;
+    top: -20px;
+}
+.problem_titleDiv_2_left_2 {
+    width: 80px;
+}
+
+    .problem_titleDiv_2_left_2 img, .problem_titleDiv_2_left_3 img {
+        height: 20px;
+    }
+
+    .problem_titleDiv_2_left_3 img {
+        margin-top: 2px;
+    }
+    .problem_titleDiv_2_left_2 span{
+        position:relative;
+        top:-4px;
+    }
+    .problem_titleDiv_2_left_3 span {
+        position: relative;
+        top: -6px;
+    }
+
+.problem_contentDiv {
+    height: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #cbc9c9;
+    border-radius:5px;
+    margin-left:40px;
+    margin-right:20px;
+    background-color:white;
+}
+
+.problem_imgDiv {
+    height: 160px;
+    padding-left:20px;
+}
+.problem_imgDiv_img {
+    border: 1px solid #cbc9c9;
+    border-radius: 5px;
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin-right: 20px;
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.problem_buttonDiv {
+    height: 50px;
+    padding-right:40px;
+}
+
+    .problem_buttonDiv div {
+        width: 100px;
+        background-color: #808080;
+        color: white;
+        font-size: 16px;
+        font-family: SimHei;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        float: right;
+        margin-right: 40px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+.resolveDiv {
+    margin-top: 40px;
+    height: 500px;
+    background-color: #f6f2f2;
+}
+
+.resolve_contentDiv {
+    text-align: center;
+    padding: 0px;
+    padding-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.contentText_submitP {
+    width: 95%;
+    margin-right: 40px;
+    height: 200px;
+    border: 1px solid #cbc9c9;
+    resize: none;
+    border-radius: 5px;
+    padding: 18px;
+    font-size: 16px;
+    color: #808080;
+    font-family: SimHei;
+}
+
+.sumbit_imgDiv_title {
+    color: #808080;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.submit_imgDiv {
+    border: 0px solid #cbc9c9;
+    border-radius: 5px;
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-right: 40px;
+}
+
+#submit_imgDiv {
+    border: 2px dashed #cbc9c9;
+    border-radius: 5px;
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-right: 40px;
+}
+
+    #submit_imgDiv img {
+        height: 80px;
+        width: 80px;
+    }
+
+#submit_imgDiv {
+    cursor: pointer;
+}
+
+.resolve_imgDiv {
+    height: 100px;
+    padding: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.resolve_btnDiv {
+    height: 50px;
+    padding: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+    .resolve_btnDiv div {
+        width: 100px;
+        background-color: #808080;
+        color: white;
+        font-size: 16px;
+        font-family: SimHei;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        float: right;
+        margin-right: 40px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }

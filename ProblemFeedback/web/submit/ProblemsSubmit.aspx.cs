@@ -7,35 +7,30 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProblemFeedback.web
+namespace ProblemFeedback.web.submit
 {
-    public partial class SubmitSell : System.Web.UI.Page
+    public partial class ProblemsSubmit : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
         }
         #region 提交点击事件
         [WebMethod]
-        public static string SubmitClick(string contents, string personName, string department)
+        public static string SubmitClick(string contents, string personName, string department,string imageUp1,string imageUp2,string imageUp3)
         {
             SqlConnection con = null;
             SqlCommand cmd = null;
 
-            string date = DateTime.Now.ToString("yyyy-mm-dd");
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
             string info = "销售相关";
-            //string contents = Request.Form["内容"].ToString();
-            //string personName = Request.Form["提交人员"].ToString();
-            //string department = Request.Form["部门职位"].ToString();
             string conStr = @"server=.\sqlexpress;database=problemsSubmit;integrated security=true";
             try
             {
                 using (con = new SqlConnection(conStr))
                 {
                     con.Open();
-
-                    string sqlStr = "insert into problemsSubmit.dbo.ProbelmsInfo values('" + info + "','" + contents + "','','','','" + personName + "','" + department + "','" + date + "')";
+                    string sqlStr = "insert into problemsSubmit.dbo.ProblemsInfos values('" + info + "','" + contents + "','','','','" + personName + "','" + department + "','" + date + "')";
                     cmd = new SqlCommand(sqlStr, con);
-                    //返回受影响的行数
                     return cmd.ExecuteNonQuery().ToString();
                 }
             }
@@ -53,16 +48,18 @@ namespace ProblemFeedback.web
         /// <param name="sender"></param>
         /// <param name="e"></param>
         [WebMethod]
-        public static string ImgUploadBtnClick(HttpPostedFile upFile)
+        public static void ImgUploadBtnClick()
         {
             try
             {
-                upFile.SaveAs(("../img/uploadImg/") + upFile.FileName.ToString());
-                return "success";
+                //HttpPostedFile file = Page.Request.Files["fileUpload"];
+                //upFile.SaveAs(("../img/uploadImg/") + upFile.FileName.ToString());
+                //return "{'success':'success'}";
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return null;
+                Console.WriteLine(e.Message);
+                //return null;
             }
         }
         #endregion

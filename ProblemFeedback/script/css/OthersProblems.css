@@ -1,0 +1,46 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.mainDiv_othersP {
+    height: 400px;
+    margin: 40px;
+    padding: 20px;
+}
+
+    .mainDiv_othersP span {
+       font-size:20px;
+       font-weight:500;
+       font-family:SimHei;
+    }
+
+.contentText_others {
+    margin-left: 20px;
+    margin-top:20px;
+    width: 90%;
+    border: 1px solid #cbc9c9;
+    resize: none;
+    border-radius: 5px;
+    padding: 18px;
+    font-size: 16px;
+    color: #808080;
+    font-family: SimHei;
+    height:200px;
+    background-color:white;
+}
+
+.mainDiv_othersP_btn {
+    width: 100px;
+    background-color: #808080;
+    color: white;
+    font-size: 16px;
+    font-family: SimHei;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

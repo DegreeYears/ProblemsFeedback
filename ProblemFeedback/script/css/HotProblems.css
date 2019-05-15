@@ -1,0 +1,44 @@
+﻿body {
+}
+.mainDiv_hotP {
+    height: 500px;
+    margin-left:20px;
+    margin-right:60px;
+    margin-top:40px;
+}
+.titleDiv_hotP{
+    height:40px;
+}
+    .titleDiv_hotP span {
+        font-size: 22px;
+        font-family: SimHei;
+        font-weight: 700;
+    }
+    .titleDiv_hotP img {
+        height:25px;
+        float:left;
+    }
+#hotP_list {
+    margin:0px;
+    padding:0px;
+    text-align:left;
+}
+li {
+    height: 40px;
+    border-bottom: 1px solid #cac6c6;
+    list-style-type: none;
+    padding-top:20px;
+    padding-left:20px;
+    font-family:SimHei;
+    font-size:16px;
+}
+    li:hover {
+        background-color: #F7F7F7;
+        color: #DE3812;
+    }
+#hotP_list_img {
+    content:url(../../img/001_arrow_right.png);
+    height:18px;
+    float:right;
+    margin-right:20px;
+}

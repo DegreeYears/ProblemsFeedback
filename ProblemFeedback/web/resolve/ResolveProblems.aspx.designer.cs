@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace ProblemFeedback.web {
+namespace ProblemFeedback.web.resolve {
     
     
-    public partial class SubmitSell {
+    public partial class ResolveProblems {
         
         /// <summary>
         /// form1 控件。

@@ -1,0 +1,201 @@
+﻿body, html {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.mainDiv {
+}
+
+.titleDiv {
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #cbc9c9;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.titleText_submitP {
+    height: 40px;
+    width: 96%;
+    position: relative;
+    top: 5px;
+    outline: none;
+    font-size: 16px;
+    border: 0px;
+}
+
+.submitP_typetitle {
+    color: #808080;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left:3px;
+}
+
+.pTypeDiv {
+    height: 70px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.submitP_type1, .submitP_type2, .submitP_type3, .submitP_type4, .submitP_type5 {
+    float: left;
+    margin-right: 30px;
+    width: 100px;
+    border: 1px solid #cbc9c9;
+    border-radius: 5px;
+    text-align: center;
+    font-size:15px;
+    color: #808080;
+    padding-top:10px;
+    padding-bottom:10px;
+    cursor:pointer;
+}
+    .submitP_type1:focus, .submitP_type2:focus, .submitP_type3:focus, .submitP_type4:focus, .submitP_type5:focus {
+        background-color: #808080;
+        color: black;
+    }
+
+.contentDiv {
+    text-align: center;
+    padding: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.contentText_submitP {
+    width:95%;
+    margin-right:40px;
+    height: 200px;
+    border: 1px solid #cbc9c9;
+    resize: none;
+    border-radius: 5px;
+    padding: 18px;
+    font-size: 16px;
+    color: #808080;
+    font-family: SimHei;
+}
+.sumbit_imgDiv_title {
+    color: #808080;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.submit_imgDiv {
+    border: 0px solid #cbc9c9;
+    border-radius:5px;
+    height:80px;
+    width:80px;
+    float:left;
+    margin-right:40px;
+}
+
+#submit_imgDiv {
+    border: 2px dashed #cbc9c9;
+    border-radius: 5px;
+    height: 80px;
+    width: 80px;
+    float: left;
+    margin-right: 40px;
+}
+
+    #submit_imgDiv img {
+        height: 80px;
+        width: 80px;
+    }
+
+#submit_imgDiv {
+    cursor: pointer;
+}
+
+.imgDiv {
+    height: 100px;
+    padding: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+/*.span {
+    height: 100%;
+    float: left;
+    text-align: center;
+    color: #808080;
+    font-size: 20px;
+}*/
+
+
+.impDiv {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    height:150px;
+    border:1px solid white;
+}
+.sumbitButton_div {
+    width: 160px;
+    border: 1px solid #cbc9c9;
+    background-color: #faf6f6;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    margin-top: 80px;
+    text-align: center;
+    cursor:pointer;
+    color:#808080;
+}
+
+    .sumbitButton_div:hover {
+        background-color: #808080;
+        color:white;
+    }
+
+.impDiv_person, .impDiv_department {
+    float: left;
+    width: 30%;
+    height: 30px;
+    border: 1px solid #cbc9c9;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin-right: 50px;
+}
+/*图片上传预览式*/
+/*.imgDiv img {
+        height: 100px;
+        width: 100px;
+        margin-top: 20px;
+        margin-left: 20px;
+        border: 1px solid white;
+    }*/
+
+/*#fileUpload, #imgUploadBtn {
+    background-color: white;
+}*/
+
+/*#lable1 {
+    color: red;
+    background-color: white;
+    border: 0px;
+}*/
+
+/*.submitB, .submitD {
+    margin-top: 15px;
+    margin-left: 10px;
+}*/
+
+/*.submit {
+    height: 35px;
+    width: 120px;
+    color: white;
+    font-size: 16px;
+    background-color: #cbc9c9;
+    margin-top: 30px;
+    border: 1px solid;
+}*/

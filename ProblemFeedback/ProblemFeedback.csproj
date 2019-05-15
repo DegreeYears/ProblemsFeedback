@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,21 +67,45 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\001_arrow_right.png" />
+    <Content Include="img\002__arrow_right.png" />
+    <Content Include="img\dd_c2.png" />
+    <Content Include="img\find.png" />
     <Content Include="img\imgIn.png" />
     <Content Include="img\import.png" />
+    <Content Include="img\jia_b1.png" />
+    <Content Include="img\jia_c1.png" />
+    <Content Include="img\panel_black.png" />
+    <Content Include="img\talk.png" />
+    <Content Include="script\css\HotProblems.css" />
     <Content Include="script\css\main.css" />
-    <Content Include="script\css\Submit.css" />
+    <Content Include="script\css\OthersProblems.css" />
+    <Content Include="script\css\ProbelmsSummary.css" />
+    <Content Include="script\css\ProblemsSubmit.css" />
+    <Content Include="script\js\HotProblems.js" />
     <Content Include="script\js\main.js" />
-    <Content Include="script\js\SubmitSell.js" />
+    <Content Include="script\js\OthersProblems.js" />
+    <Content Include="script\js\ProblemsSummary.js" />
+    <Content Include="script\js\ProblemsSubmit.js" />
     <Content Include="Web.config" />
+    <Content Include="web\hot\HotProblems.aspx" />
     <Content Include="web\main.aspx" />
-    <Content Include="web\submit\SubmitSell.aspx" />
+    <Content Include="web\others\OthersProblems.aspx" />
+    <Content Include="web\resolve\ResolveProblems.aspx" />
+    <Content Include="web\submit\ProblemsSubmit.aspx" />
     <Content Include="web\summary\ProblemsSummary.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="data\DBHelper.cs" />
     <Compile Include="data\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="web\hot\HotProblems.aspx.cs">
+      <DependentUpon>HotProblems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\hot\HotProblems.aspx.designer.cs">
+      <DependentUpon>HotProblems.aspx</DependentUpon>
+    </Compile>
     <Compile Include="web\main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,12 +113,26 @@
     <Compile Include="web\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\submit\SubmitSell.aspx.cs">
-      <DependentUpon>SubmitSell.aspx</DependentUpon>
+    <Compile Include="web\others\OthersProblems.aspx.cs">
+      <DependentUpon>OthersProblems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\submit\SubmitSell.aspx.designer.cs">
-      <DependentUpon>SubmitSell.aspx</DependentUpon>
+    <Compile Include="web\others\OthersProblems.aspx.designer.cs">
+      <DependentUpon>OthersProblems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\resolve\ResolveProblems.aspx.cs">
+      <DependentUpon>ResolveProblems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\resolve\ResolveProblems.aspx.designer.cs">
+      <DependentUpon>ResolveProblems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\submit\ProblemsSubmit.aspx.cs">
+      <DependentUpon>ProblemsSubmit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\submit\ProblemsSubmit.aspx.designer.cs">
+      <DependentUpon>ProblemsSubmit.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\summary\ProblemsSummary.aspx.cs">
       <DependentUpon>ProblemsSummary.aspx</DependentUpon>
@@ -105,7 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\uploadImg\" />
-    <Folder Include="web\resolve\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
