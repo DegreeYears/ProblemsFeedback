@@ -33,7 +33,7 @@
                     </ul>
                 </div>
                 <div id="rightDiv">
-                    <iframe class="mainIframe" runat="server" src="hot/HotProblems.aspx" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
+                    <iframe class="mainIframe" name="iframe" runat="server" src="hot/HotProblems.aspx" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
                 </div>
             </div>
         </div>

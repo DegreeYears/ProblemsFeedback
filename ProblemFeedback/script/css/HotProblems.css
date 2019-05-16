@@ -1,7 +1,8 @@
 ﻿body {
 }
 .mainDiv_hotP {
-    height: 500px;
+    min-height: 660px;
+    height:100%;
     margin-left:20px;
     margin-right:60px;
     margin-top:40px;

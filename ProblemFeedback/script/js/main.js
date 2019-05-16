@@ -1,5 +1,6 @@
 ﻿$(function () {
     $(function () {
+        
         $(".menuList").children("span").hover(function () {
             if ($(this).css("background-color") == 'rgb(238,82,54)') {
             } else {
@@ -36,6 +37,12 @@
             //$('.mainIframe').load(function () {
             //    $(this).contents().find(".titleDiv").html(name + "问题反馈");
             //});
+        });
+        $(".mainIframe").load(function () {
+            var iframeHeight = $(".mainIframe").contents().find("body").height()+60;
+            $(".mainIframe").height(iframeHeight);
+            $("#rightDiv").height(iframeHeight + 40);
+            $("#contentDiv").height(iframeHeight + 60);
         });
     });
 });
