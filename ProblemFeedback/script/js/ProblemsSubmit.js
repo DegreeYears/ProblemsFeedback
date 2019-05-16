@@ -1,4 +1,5 @@
 ﻿$(function () {
+    
     //页面提交事件
     $(".submit").click(function () {
         var content = $(".text").val();

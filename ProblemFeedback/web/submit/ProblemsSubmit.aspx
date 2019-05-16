@@ -18,11 +18,11 @@
             </div>
             <div class="pTypeDiv">
                 <div class="submitP_typetitle">请选择问题类型</div>
-                <div class="submitP_type1"><span>采购相关</span></div>
-                <div class="submitP_type2"><span>销售相关</span></div>
-                <div class="submitP_type3"><span>生产相关</span></div>
-                <div class="submitP_type4"><span>库存相关</span></div>
-                <div class="submitP_type5"><span>其他问题</span></div>
+                <div class="submitP_type" id="submitP_type1"><span>采购相关</span></div>
+                <div class="submitP_type" id="submitP_type2"><span>销售相关</span></div>
+                <div class="submitP_type" id="submitP_type3"><span>生产相关</span></div>
+                <div class="submitP_type" id="submitP_type4"><span>库存相关</span></div>
+                <div class="submitP_type" id="submitP_type5"><span>其他问题</span></div>
             </div>
             <div class="contentDiv">
                 <textarea class="contentText_submitP" placeholder="请描述遇到的问题或者建议" name ="内容"></textarea>
@@ -39,9 +39,6 @@
                 <input class="impDiv_person" placeholder="您的姓名 " />
                 <input class="impDiv_department" placeholder="您所在的部门 " />
                 <div class="sumbitButton_div">我要提交</div>
-                <%--提交人员:<input class="submitB" id="submitB" type="text" name="提交人员"/><br/>
-                部门职位:<input class="submitD" id="submitD" type="text" name="部门职位"/><br/>
-                <input class="submit" type="button" id="submitBtn" value="提交" />--%>
             </div>
         </div>
     </form>

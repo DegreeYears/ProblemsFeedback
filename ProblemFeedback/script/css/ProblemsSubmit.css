@@ -41,7 +41,7 @@
     margin-top: 30px;
 }
 
-.submitP_type1, .submitP_type2, .submitP_type3, .submitP_type4, .submitP_type5 {
+.submitP_type {
     float: left;
     margin-right: 30px;
     width: 100px;
@@ -54,9 +54,9 @@
     padding-bottom:10px;
     cursor:pointer;
 }
-    .submitP_type1:focus, .submitP_type2:focus, .submitP_type3:focus, .submitP_type4:focus, .submitP_type5:focus {
+    .submitP_type:hover{
         background-color: #808080;
-        color: black;
+        color: white;
     }
 
 .contentDiv {
