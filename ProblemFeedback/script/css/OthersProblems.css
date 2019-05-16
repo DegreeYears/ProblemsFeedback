@@ -28,6 +28,7 @@
     font-family: SimHei;
     height:200px;
     background-color:white;
+    outline:none;
 }
 
 .mainDiv_othersP_btn {
@@ -43,4 +44,8 @@
     margin-right: 40px;
     margin-top: 10px;
     border-radius: 5px;
+    cursor:pointer;
 }
+    .mainDiv_othersP_btn:hover {
+        box-shadow:3px 3px 3px #b6b6b6;
+    }

@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <div class="mainDiv_othersP">
             <span>其他疑问</span><br/>
-            <textarea class="contentText_others" placeholder="假如您有其他疑问或者系统问题和建议，您可以在此反馈给我们，当然我们也非常乐意倾听你的吐槽和不愉快..." name="内容"></textarea>
+            <textarea class="contentText_others" placeholder="假如您有其他疑问或者系统问题和建议，您可以在此反馈给我们，当然我们也非常乐意倾听你的吐槽和不愉快..." name="内容"maxlength="500" onchange="this.value=this.value.substring(0, 500)" onkeydown="this.value=this.value.substring(0, 500)" onkeyup="this.value=this.value.substring(0, 500)"></textarea>
             <div class="mainDiv_othersP_btn">提交疑问</div>
         </div>
     </form>
