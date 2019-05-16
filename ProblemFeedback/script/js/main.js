@@ -1,6 +1,5 @@
 ﻿$(function () {
-    $(function () {
-        
+        //导航栏划过效果
         $(".menuList").children("span").hover(function () {
             if ($(this).css("background-color") == 'rgb(238,82,54)') {
             } else {
@@ -9,6 +8,7 @@
         }, function () {
             $(this).css("color", "white");
         });
+        //导航栏点击效果
         $(".oneList").click(function () {
             for (var i = 1; i < 6; i++) {
                 $("#oneList" + i).css("background-color", "#26212f");
@@ -33,17 +33,23 @@
             if ($(this).attr("id") == "oneList5") {
                 $('.mainIframe').attr('src', 'others/OthersProblems.aspx');
             }
-            //监听iframe异步资源加载
-            //$('.mainIframe').load(function () {
-            //    $(this).contents().find(".titleDiv").html(name + "问题反馈");
-            //});
         });
+        //页面高度自适应
         $(".mainIframe").load(function () {
-            var iframeHeight = $(".mainIframe").contents().find("body").height()+60;
+            var iframeHeight = $(".mainIframe").contents().find("body").height() + 60;
             $(".mainIframe").height(iframeHeight);
             $("#rightDiv").height(iframeHeight + 40);
             $("#contentDiv").height(iframeHeight + 60);
         });
-    });
+        
 });
+//子页面调用该方法 实现页面跳转
+function PageToJump(id) {
+    for (var i = 1; i < 6; i++) {
+        $("#oneList" + i).css("background-color", "#26212f");
+    }
+    $("#oneList3").css("background-color", "#ee5236");
+    $("#oneList3").css("color", "white");
+    $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx');
+}
 

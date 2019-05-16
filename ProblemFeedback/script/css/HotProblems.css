@@ -32,6 +32,7 @@ li {
     padding-left:20px;
     font-family:SimHei;
     font-size:16px;
+    cursor:pointer;
 }
     li:hover {
         background-color: #F7F7F7;

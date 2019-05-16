@@ -18,7 +18,6 @@
                 <span>热点问题</span>
             </div>
             <ul id="hotP_list">
-                
             </ul>
         </div>
     </form>

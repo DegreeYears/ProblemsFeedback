@@ -85,8 +85,8 @@
     <Content Include="script\js\HotProblems.js" />
     <Content Include="script\js\main.js" />
     <Content Include="script\js\OthersProblems.js" />
-    <Content Include="script\js\ProblemsSummary.js" />
     <Content Include="script\js\ProblemsSubmit.js" />
+    <Content Include="script\js\ProblemsSummary.js" />
     <Content Include="Web.config" />
     <Content Include="web\hot\HotProblems.aspx" />
     <Content Include="web\main.aspx" />

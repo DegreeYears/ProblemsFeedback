@@ -9,37 +9,21 @@
         },
         success: function (result) {
             var data1 = result.d;
-            var json = eval("(" + data1 + ")");
-
-            $.each(json, function (index, item) {
-                //var li = $("<li value=" + data[index] + ">" + data[item] + "</li>");
-                //li.appendTO("#hotP_list");
-                $("#hotP_list").append('<li id="hotP_list_li' + index + '">' + json[index].title + '<div id="hotP_list_li_div' + index + '">' + json[index].person +'<br/>'+ json[index].date+'</div></li>');
-            });
+            if (data1 != null) {
+                var json = eval("(" + data1 + ")");
+                $.each(json, function (index, item) {
+                    $("#hotP_list").append('<li id="hotP_list_li' + json[index].id + '">' + json[index].title + '<div id="hotP_list_li_div' + index + '">' + json[index].person + '<br/>' + json[index].date + '</div></li>');
+                });
+                $("li").on("click", function () {
+                    var id = $(this).attr("id");
+                    id = id.substring(12, id.length);
+                    window.parent.PageToJump(id);
+                    var a = window.parent.$("#oneList1").attr("class");
+                });
+            }
+            else {
+                alert("数据读取失败！");
+            }
         }
     });
 });
-    //$(".select").change(function () {
-    //    var index1 = $("#select1").val();//解决状态 index
-    //    var index2 = $("#select2").val();//问题种类 index
-    //    var text1 = $("#select1").text();//解决状态 text
-    //    var text2 = $("#select2").text();//问题种类 text
-    //    $.ajax({
-    //        type: "post",
-    //        url: "ProblemsSummary.aspx/SelectChange1",
-    //        contentType: "application/json; charset=utf-8",
-    //        data: "{'index1':'" + index1 + "','index2':'" + index2 + "','text1':'" + text1 + "','text2':'" + text2 + "'}",
-    //        dataType: "json",
-    //        success: function (msg) {
-    //            //window.location.reload();
-    //        },
-    //        error: function (err) {
-    //            var errStr = err;
-    //        }
-    //    });
-    //});
-//$(function () {
-//    $("#select2").change(function () {
-//        var index = $(this).val();//index
-//    });
-//});
