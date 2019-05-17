@@ -11,7 +11,7 @@
         }
     });
     //图片上传事件
-    $("#submit_imgDiv").click(function () {
+    $("#submit_imgDiv").on("click",function () {
         $("#file").click();
         var pathName = $("#file").val();
         var fileName = pathName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi, "$1");
@@ -47,7 +47,6 @@
                 }
                 if (imgTypeis) {
                     if (upFile.size <= (5 * 1024 * 1024)) {
-
                         try {
                             var formData = new FormData();
                             formData.append("file", upFile);
@@ -56,12 +55,10 @@
                         }
                         $.ajax({
                             type: "post",
-                            url:"SubmitProblems.aspx/ImgUploadBtnClick",
-                            data: formData,
-                            //dataType: "json",
-                            processData: false,
+                            url: "",
                             contentType: false,
-                            async:false,
+                            data: formData,
+                            processData: false,
                             success: function (msg) {
                                 if (imgFlag == 0) {
                                     submit_imgDiv_view1_img = "../img/uploadImg/" + fileName;

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace ProblemFeedback.web.submit
 {
@@ -46,25 +45,26 @@ namespace ProblemFeedback.web.submit
         /// 图片上传
         /// </summary>
         [WebMethod]
-        public static string ImgUploadBtnClick(HttpContext context)
+        public static void ImgUploadBtnClick()
         {
-            Console.WriteLine();
             try
             {
-                HttpFileCollection file = context.Request.Files;
-                //HttpPostedFile file = Page.Request.Files["fileUpload"];
-                string imgName = "";
-                if (file.Count > 0)
-                {
-                    imgName = "img" + DateTime.Now.ToString("yyyyMMddHHmmss");
-                    file[0].SaveAs(("../img/uploadImg/") + imgName);
-                }
-                return imgName;
+                Page page = new Page();
+                string imgName = "img" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                HttpPostedFile file = page.Request.Files["file"];
+                file.SaveAs(("../img/uploadImg/") + imgName);
+                //var file = Request.Files;
+                //if (Count > 0)
+                //{
+                    //file[0].SaveAs(("../img/uploadImg/") + imgName);
+                    //upFile.SaveAs(("../img/uploadImg/") + imgName);
+                ////}
+                //return imgName;
             }
             catch (Exception e)
             {
                 //输出异常日志
-                return null;
+                //return null;
             }
         }
     }

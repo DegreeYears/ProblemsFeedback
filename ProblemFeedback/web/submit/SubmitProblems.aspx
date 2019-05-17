@@ -29,7 +29,7 @@
                 <textarea class="contentText_submitP" placeholder="请描述遇到的问题或者建议" name ="内容" maxlength="500" onchange="this.value=this.value.substring(0, 500)" onkeydown="this.value=this.value.substring(0, 500)" onkeyup="this.value=this.value.substring(0, 500)"></textarea>
             </div>
             <div class="imgDiv">
-                <input type="file" id="file"/>
+                <input type="file" id="file" name="file" runat="server"/>
                 <div class="sumbit_imgDiv_title"><a>上传图片(0/3)</a></div>
                 <div class="submit_imgDiv" id="submit_imgDiv"><img src="../../img/jia_c1.png" /></div>
                 <div class="submit_imgDiv" id="submit_imgDiv_view1"><img id="submit_imgDiv_view1_img" src="" /></div>
