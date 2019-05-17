@@ -9,14 +9,15 @@ using System.Web.UI.WebControls;
 
 namespace ProblemFeedback.web.submit
 {
-    public partial class ProblemsSubmit : System.Web.UI.Page
+    public partial class SubmitProblems : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
         #region 提交点击事件
         [WebMethod]
-        public static string SubmitClick(string contents, string personName, string department,string imageUp1,string imageUp2,string imageUp3)
+        public static string SubmitClick(string contents, string personName, string department, string imageUp1, string imageUp2, string imageUp3)
         {
             SqlConnection con = null;
             SqlCommand cmd = null;
@@ -41,27 +42,30 @@ namespace ProblemFeedback.web.submit
             }
         }
         #endregion
-        #region 图片上传
         /// <summary>
         /// 图片上传
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         [WebMethod]
-        public static void ImgUploadBtnClick()
+        public static string ImgUploadBtnClick(HttpContext context)
         {
+            Console.WriteLine();
             try
             {
+                HttpFileCollection file = context.Request.Files;
                 //HttpPostedFile file = Page.Request.Files["fileUpload"];
-                //upFile.SaveAs(("../img/uploadImg/") + upFile.FileName.ToString());
-                //return "{'success':'success'}";
+                string imgName = "";
+                if (file.Count > 0)
+                {
+                    imgName = "img" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                    file[0].SaveAs(("../img/uploadImg/") + imgName);
+                }
+                return imgName;
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                //return null;
+                //输出异常日志
+                return null;
             }
         }
-        #endregion
     }
 }

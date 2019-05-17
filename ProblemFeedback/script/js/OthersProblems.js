@@ -1,7 +1,6 @@
 ﻿$(function () {
     $(".mainDiv_othersP_btn").click(function () {
         var content_othersP = $(".contentText_others").val();
-        var pcontent_l = $(".contentText_others").val().length;
         if (content_othersP.length) {
             $.ajax({
                 type: "POST",

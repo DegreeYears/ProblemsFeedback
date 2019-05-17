@@ -92,7 +92,7 @@
     <Content Include="web\main.aspx" />
     <Content Include="web\others\OthersProblems.aspx" />
     <Content Include="web\resolve\ResolveProblems.aspx" />
-    <Content Include="web\submit\ProblemsSubmit.aspx" />
+    <Content Include="web\submit\SubmitProblems.aspx" />
     <Content Include="web\summary\ProblemsSummary.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -127,12 +127,12 @@
     <Compile Include="web\resolve\ResolveProblems.aspx.designer.cs">
       <DependentUpon>ResolveProblems.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\submit\ProblemsSubmit.aspx.cs">
-      <DependentUpon>ProblemsSubmit.aspx</DependentUpon>
+    <Compile Include="web\submit\SubmitProblems.aspx.cs">
+      <DependentUpon>SubmitProblems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\submit\ProblemsSubmit.aspx.designer.cs">
-      <DependentUpon>ProblemsSubmit.aspx</DependentUpon>
+    <Compile Include="web\submit\SubmitProblems.aspx.designer.cs">
+      <DependentUpon>SubmitProblems.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\summary\ProblemsSummary.aspx.cs">
       <DependentUpon>ProblemsSummary.aspx</DependentUpon>
@@ -143,6 +143,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="img\uploadImgCache\" />
     <Folder Include="img\uploadImg\" />
   </ItemGroup>
   <PropertyGroup>

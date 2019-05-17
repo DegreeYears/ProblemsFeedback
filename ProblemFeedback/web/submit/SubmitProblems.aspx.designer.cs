@@ -10,7 +10,7 @@
 namespace ProblemFeedback.web.submit {
     
     
-    public partial class ProblemsSubmit {
+    public partial class SubmitProblems {
         
         /// <summary>
         /// form1 控件。

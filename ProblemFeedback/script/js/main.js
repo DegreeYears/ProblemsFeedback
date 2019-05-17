@@ -22,7 +22,7 @@
                 $('.mainIframe').attr('src', 'hot/HotProblems.aspx');
             }
             if ($(this).attr("id") == "oneList2") {
-                $('.mainIframe').attr('src', 'submit/ProblemsSubmit.aspx');
+                $('.mainIframe').attr('src', 'submit/SubmitProblems.aspx');
             }
             if ($(this).attr("id") == "oneList3") {
                 $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx');
