@@ -55,9 +55,11 @@
                         }
                         $.ajax({
                             type: "post",
-                            url: "",
-                            contentType: false,
+                            url: "../../handler/FileUploadHandler.ashx",
+                            //dataType: "json",
                             data: formData,
+                            //async: false,
+                            contentType: false,
                             processData: false,
                             success: function (msg) {
                                 if (imgFlag == 0) {

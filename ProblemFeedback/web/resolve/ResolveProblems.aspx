@@ -18,7 +18,7 @@
                     <div class="problem_titleDiv_1">我是问题标题</div>
                     <div class="problem_titleDiv_2">
                         <div class="problem_titleDiv_2_left">宁怡哲</div>
-                        <div class="problem_titleDiv_2_left">
+                        <div class="problem_titleDiv_2_right">
                             <div class="problem_titleDiv_2_left_3"><img src="../../img/huifu_h1.png"/><span>已解决</span></div>
                             <div class="problem_titleDiv_2_left_2"><img src="../../img/liulan_count_h1.png"/><span>10</span></div>
                             <div class="problem_titleDiv_2_left_1">2019-05-15</div>
@@ -34,11 +34,12 @@
                     <div class="problem_imgDiv_img" id="problem_imgDiv_img_3"></div>
                 </div>
                 <div class="problem_buttonDiv">
-                    <div>我来解决</div>
+                    <div class="problem_buttonDiv_btn">我来解决</div>
                 </div>
             </div>
             <div class="resolveDiv">
-                <div class="resolve_contentDiv">
+                <div class="c_resolveDiv">
+                    <div class="resolve_contentDiv">
                     <textarea class="contentText_submitP" placeholder="请描述解决问题的方法或者建议" name="内容"></textarea>
                 </div>
                 <div class="resolve_imgDiv">
@@ -51,6 +52,7 @@
                 </div>
                 <div class="resolve_btnDiv">
                     <div>发表回复</div>
+                </div>
                 </div>
             </div>
         </div>

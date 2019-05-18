@@ -25,7 +25,7 @@
                 $('.mainIframe').attr('src', 'submit/SubmitProblems.aspx');
             }
             if ($(this).attr("id") == "oneList3") {
-                $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx');
+                $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx?id=0');
             }
             if ($(this).attr("id") == "oneList4") {
                 $('.mainIframe').attr('src', 'summary/ProblemsSummary.aspx');
@@ -50,6 +50,6 @@ function PageToJump(id) {
     }
     $("#oneList3").css("background-color", "#ee5236");
     $("#oneList3").css("color", "white");
-    $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx');
+    $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx?id=' + id);
 }
 

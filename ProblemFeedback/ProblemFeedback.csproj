@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="handler\FileUploadHandler .ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -99,6 +100,9 @@
     <Compile Include="data\DBHelper.cs" />
     <Compile Include="data\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="handler\FileUploadHandler .ashx.cs">
+      <DependentUpon>FileUploadHandler .ashx</DependentUpon>
+    </Compile>
     <Compile Include="web\hot\HotProblems.aspx.cs">
       <DependentUpon>HotProblems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

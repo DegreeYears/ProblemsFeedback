@@ -49,10 +49,11 @@ namespace ProblemFeedback.web.submit
         {
             try
             {
+                //var f =file;
                 Page page = new Page();
                 string imgName = "img" + DateTime.Now.ToString("yyyyMMddHHmmss");
-                HttpPostedFile file = page.Request.Files["file"];
-                file.SaveAs(("../img/uploadImg/") + imgName);
+                //HttpPostedFile file = page.Request.Files["file"];
+                //file.SaveAs(("../img/uploadImg/") + imgName);
                 //var file = Request.Files;
                 //if (Count > 0)
                 //{
