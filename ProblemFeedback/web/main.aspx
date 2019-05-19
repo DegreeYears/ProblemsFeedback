@@ -35,6 +35,12 @@
                 <div id="rightDiv">
                     <iframe class="mainIframe" name="iframe" runat="server" src="hot/HotProblems.aspx" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
                 </div>
+                 <!-- 图片弹出窗 -->
+            <div id="outerdiv">
+                <div id="innerdiv" >
+                    <img id="bigimg" src="" />
+                </div>
+            </div>
             </div>
         </div>
     </form>

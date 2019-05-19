@@ -1,4 +1,7 @@
-﻿.pCountDiv {
+﻿.mainDiv {
+    height:100%;
+}
+.pCountDiv {
     background-color: white;
     height: 60px;
     color: #808080;
@@ -16,10 +19,14 @@
 }
 
 .titile_pCountDiv_2 {
+    padding-left:0px;
     height:60px;
     float: right;
+    width:400px;
 }
-
+.titile_pCountDiv_2_1 {
+    float: right;
+}
 .titile_pCountDiv_2_1 img {
     height: 20px;
     width: 20px;
@@ -37,6 +44,7 @@
     margin-bottom: 2px;
     text-align: center;
     border: 1px solid #808080;
+    border-radius:3px;
     color: #e3e0e0;
 }
 .findDiv img {
@@ -52,6 +60,7 @@
     border:0px;
     outline:none;
     padding-left:10px;
+    color:#808080;
 }
 .typeDiv {
     height: 30px;
@@ -71,6 +80,8 @@
         text-align: center;
         color: #808080;
         font-size:15px;
+        cursor:pointer;
+        background-color:white;
     }
 .listDiv {
     border-top: 1px solid #cac6c6;

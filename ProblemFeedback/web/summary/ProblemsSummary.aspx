@@ -18,26 +18,26 @@
                 <div class="titile_pCountDiv_2">
                     <div class="titile_pCountDiv_2_1">
                         <div><img src="../../img/dd_c2.png" /></div>
-                        <div>今日问题：5</div>
-                        <div>历史问题：10</div>
-                        <div>已解决：4</div>                        
+                        <div class="titile_pCountDiv_2_1_1">今日问题：5</div>
+                        <div class="titile_pCountDiv_2_1_2">历史问题：10</div>
+                        <div class="titile_pCountDiv_2_1_3">已解决：4</div>                        
                     </div>   
                     <div class="findDiv">
                         <span>
-                            <input type="text" /></span>
+                            <input type="text" maxlength="35" placeholder="搜索"/></span>
                         <img src="../../img/find.png" />
                     </div>
                 </div>
             </div>
             <div class="typeDiv">
-                <div class="submitP_type0">全部</div>
-                <div class="submitP_type1">采购相关</div>
-                <div class="submitP_type2">销售相关</div>
-                <div class="submitP_type3">生产相关</div>
-                <div class="submitP_type4">库存相关</div>
-                <div class="submitP_type5">其他问题</div>
-                <div class="submitP_type6">已解决</div>
-                <div class="submitP_type7">未解决</div>
+                <div class="submitP_type1">全部</div>
+                <div class="submitP_type2">采购相关</div>
+                <div class="submitP_type3">销售相关</div>
+                <div class="submitP_type4">生产相关</div>
+                <div class="submitP_type5">库存相关</div>
+                <div class="submitP_type6">其他问题</div>
+                <div class="submitP_type7">已解决</div>
+                <div class="submitP_type8">未解决</div>
             </div>
             <div class="listDiv">
                 <ul id="hotP_list">

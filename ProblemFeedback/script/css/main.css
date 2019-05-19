@@ -2,9 +2,9 @@
     padding: 0px;
     margin: 0px;
     width: 2000px;
-    min-width: 1500px;
+    min-width: 1600px;
     max-width: 100%;
-    background-color:#f6f2f2;
+    background-color: #f6f2f2;
 }
 
 #mainForm {
@@ -13,7 +13,7 @@
 #mainDiv {
     height: 100%;
     overflow: hidden;
-    min-width:600px;
+    min-width: 800px;
 }
 
 #titleDiv {
@@ -21,18 +21,18 @@
     background: #26212f;
     height: 100px;
     padding-top: 40px;
-    text-align:center;
+    text-align: center;
     float: left;
     width: 100%;
 }
 
-#titleDiv span {
-    height: 50px;
-    font-weight: 200;
-    font-size: 30px;
-    font-family:SimHei;
-    margin-left:10px;
-}
+    #titleDiv span {
+        height: 50px;
+        font-weight: 200;
+        font-size: 30px;
+        font-family: SimHei;
+        margin-left: 10px;
+    }
 
 .titleDiv_titleLogo {
     position: relative;
@@ -41,23 +41,26 @@
     height: 50px;
     margin-left: -300px;
 }
+
 .titleFindDiv {
-    float:right;
-    width:220px;
-    height:40px;
-    margin-right:300px;
-    margin-top:15px;
-    background-color:white;
-    border-radius:3px;
+    float: right;
+    width: 220px;
+    height: 40px;
+    margin-right: 300px;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 3px;
 }
+
 .titleFindText {
-    height:25px;
+    height: 25px;
     position: relative;
     top: -5px;
     margin-bottom: 10px;
-    border:0px;
-    outline:none;
+    border: 0px;
+    outline: none;
 }
+
 .titleFindImg {
     position: relative;
     top: 4px;
@@ -69,7 +72,7 @@
 #contentDiv {
     width: 1500px;
     max-width: 60%;
-    min-height:750px;
+    min-height: 750px;
     height: 100%;
     margin-left: 20%;
     margin-right: 20%;
@@ -85,7 +88,7 @@
     height: 700px;
     float: left;
     background: #26212f;
-    box-shadow:6px 6px 6px #888888;
+    box-shadow: 6px 6px 6px #888888;
 }
 
 #rightDiv {
@@ -113,37 +116,34 @@ iframe {
     list-style-type: none;
     text-align: center;
     font-family: SimHei;
-    color:white;
+    color: white;
 }
 
-/*.current {
-    color: #ee5236;
-    background-color: #ee5236;
-}*/
 
-.oneList > span {
-    margin-left: 10px;
-}
+    .oneList > span {
+        margin-left: 10px;
+    }
 
-/*.oneListUl {
-    display: none;
-    border: 0px;
-}*/
-
-/*.oneListUl > li {
-    border: 0px;
-    margin-top: 10px;
-    line-height: 25px;
-    background: #cbc9c9;
-    text-align: center;
-    width: 80%;
-}*/
-
-/*.oneListUl > li > a {
-    color: #ffffff;
-    text-decoration: none;
-}*/
 
 .MenuUl, .menuList > ul {
     list-style-type: none;
+}
+
+#outerdiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#innerdiv {
+    position: absolute;
+}
+
+#bigimg {
+    border: 5px solid #fff;
 }

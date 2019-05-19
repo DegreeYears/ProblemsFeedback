@@ -35,7 +35,7 @@
             }
         });
         //页面高度自适应
-        $(".mainIframe").load(function () {
+        $(".mainIframe").on("load",function () {
             var iframeHeight = $(".mainIframe").contents().find("body").height() + 60;
             $(".mainIframe").height(iframeHeight);
             $("#rightDiv").height(iframeHeight + 40);
@@ -52,4 +52,3 @@ function PageToJump(id) {
     $("#oneList3").css("color", "white");
     $('.mainIframe').attr('src', 'resolve/ResolveProblems.aspx?id=' + id);
 }
-

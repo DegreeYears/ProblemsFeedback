@@ -53,6 +53,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
+    background-color:white;
 }
     .submitP_type_c:hover{
         background-color: #808080;
@@ -68,8 +69,8 @@
 }
 
 .contentText_submitP {
-    width:95%;
-    margin-right:40px;
+    width: 95%;
+    margin-right: 40px;
     height: 200px;
     border: 1px solid #cbc9c9;
     resize: none;
@@ -78,6 +79,7 @@
     font-size: 16px;
     color: #808080;
     font-family: SimHei;
+    overflow: hidden;
 }
 .sumbit_imgDiv_title {
     color: #808080;
@@ -94,7 +96,12 @@
     float:left;
     margin-right:40px;
 }
-
+#submit_imgDiv_view1 img, #submit_imgDiv_view2 img, #submit_imgDiv_view3 img {
+    display: none;
+    border: 0px solid white;
+    height: 80px;
+    width: 80px;
+}
 #submit_imgDiv {
     border: 2px dashed #cbc9c9;
     border-radius: 5px;
@@ -169,36 +176,3 @@
 #file{
     display: none;
 }
-/*图片上传预览式*/
-/*.imgDiv img {
-        height: 100px;
-        width: 100px;
-        margin-top: 20px;
-        margin-left: 20px;
-        border: 1px solid white;
-    }*/
-
-/*#fileUpload, #imgUploadBtn {
-    background-color: white;
-}*/
-
-/*#lable1 {
-    color: red;
-    background-color: white;
-    border: 0px;
-}*/
-
-/*.submitB, .submitD {
-    margin-top: 15px;
-    margin-left: 10px;
-}*/
-
-/*.submit {
-    height: 35px;
-    width: 120px;
-    color: white;
-    font-size: 16px;
-    background-color: #cbc9c9;
-    margin-top: 30px;
-    border: 1px solid;
-}*/

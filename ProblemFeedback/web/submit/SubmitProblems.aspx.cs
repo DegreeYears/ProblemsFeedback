@@ -14,7 +14,16 @@ namespace ProblemFeedback.web.submit
         {
 
         }
-        #region 提交点击事件
+        /// <summary>
+        /// 提交点击事件
+        /// </summary>
+        /// <param name="contents"></param>
+        /// <param name="personName"></param>
+        /// <param name="department"></param>
+        /// <param name="imageUp1"></param>
+        /// <param name="imageUp2"></param>
+        /// <param name="imageUp3"></param>
+        /// <returns></returns>
         [WebMethod]
         public static string SubmitClick(string contents, string personName, string department, string imageUp1, string imageUp2, string imageUp3)
         {
@@ -38,34 +47,6 @@ namespace ProblemFeedback.web.submit
             {
                 Console.WriteLine(ex.Message);
                 return null;
-            }
-        }
-        #endregion
-        /// <summary>
-        /// 图片上传
-        /// </summary>
-        [WebMethod]
-        public static void ImgUploadBtnClick()
-        {
-            try
-            {
-                //var f =file;
-                Page page = new Page();
-                string imgName = "img" + DateTime.Now.ToString("yyyyMMddHHmmss");
-                //HttpPostedFile file = page.Request.Files["file"];
-                //file.SaveAs(("../img/uploadImg/") + imgName);
-                //var file = Request.Files;
-                //if (Count > 0)
-                //{
-                    //file[0].SaveAs(("../img/uploadImg/") + imgName);
-                    //upFile.SaveAs(("../img/uploadImg/") + imgName);
-                ////}
-                //return imgName;
-            }
-            catch (Exception e)
-            {
-                //输出异常日志
-                //return null;
             }
         }
     }
