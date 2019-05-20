@@ -98,6 +98,42 @@ namespace ProblemFeedback.data
             }
         }
         /// <summary>
+        /// 根据表名更新
+        /// </summary>
+        /// <param name="hsTable"></param>
+        /// <returns></returns>
+        public int AddData_TableId(Hashtable hsTable,string tableId)
+        {
+            try
+            {
+                using (con = new SqlConnection(conStr))
+                {
+                    string strSql = "insert into "+tableId+" (";
+                    foreach (var item in hsTable.Keys)
+                    {
+                        strSql = strSql + item + ",";
+                    }
+                    strSql = strSql.Substring(0, strSql.Length - 1);
+                    strSql += ") values(";
+                    foreach (var item in hsTable.Keys)
+                    {
+                        strSql = strSql + "'" + hsTable[item] + "',";
+                    }
+                    strSql = strSql.Substring(0, strSql.Length - 1);
+                    strSql += ")";
+                    con.Open();
+                    cmd = new SqlCommand(strSql, con);
+                    int result = cmd.ExecuteNonQuery();
+                    return result;
+                }
+            }
+            catch (Exception e)
+            {
+                //异常写入日志
+                return 0;
+            }
+        }
+        /// <summary>
         /// 根据新增语句添加记录
         /// </summary>
         public int AddData(string strSql)
@@ -123,8 +159,29 @@ namespace ProblemFeedback.data
         {
         }
         //改
-        public void UpdateData()
+        public int SetData_TableId(Hashtable hsTable,string tableId,int id)
         {
+            try
+            {
+                using (con = new SqlConnection(conStr))
+                {
+                    string strSql = "update " + tableId + " set ";
+                    foreach (var item in hsTable.Keys)
+                    {
+                        strSql = strSql + item + "=" + hsTable[item]+" , ";
+                    }
+                    strSql = strSql.Substring(0, strSql.Length - 2)+" where id="+id;
+                    con.Open();
+                    cmd = new SqlCommand(strSql, con);
+                    int result = cmd.ExecuteNonQuery();
+                    return result;
+                }
+            }
+            catch (Exception e)
+            {
+                //异常写入日志
+                return 0;
+            }
         }
     }
 }

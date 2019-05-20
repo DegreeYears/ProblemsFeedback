@@ -1,4 +1,6 @@
 ﻿$(function () {
+    $("#submitP_type1").css("color", "#808080");
+    $("#submitP_type1").css("background-color", "white");
     //问题类型点击事件
     $(".submitP_type_c").on("click", function () {
         if ($(this).css("background-color") == 'rgb(255, 255, 255)') {
@@ -62,14 +64,17 @@
                                     if (imgFlag == 0) {
                                         $('#submit_imgDiv_view1_img').attr("src", "../../img/uploadImgCache/" + data);
                                         $('#submit_imgDiv_view1_img').css("display", "inline");
+                                        $('.sumbit_imgDiv_title').children("a").text("上传图片(1/3)");
                                     }
                                     if (imgFlag == 1) {
                                         $('#submit_imgDiv_view2_img').attr("src", "../../img/uploadImgCache/" + data);
                                         $('#submit_imgDiv_view2_img').css("display", "inline");
+                                        $('.sumbit_imgDiv_title').children("a").text("上传图片(2/3)");
                                     }
                                     if (imgFlag == 2) {
                                         $('#submit_imgDiv_view3_img').attr("src", "../../img/uploadImgCache/" + data);
                                         $('#submit_imgDiv_view3_img').css("display", "inline");
+                                        $('.sumbit_imgDiv_title').children("a").text("上传图片(3/3)");
                                     }
                                     alert("上传成功！")
                                 }

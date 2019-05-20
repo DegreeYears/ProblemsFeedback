@@ -66,6 +66,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="web\submit\UploadImage.ashx" />
+    <Content Include="web\resolve\ResolveUploadImage.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\001_arrow_right.png" />
@@ -127,6 +128,9 @@
     </Compile>
     <Compile Include="web\resolve\ResolveProblems.aspx.designer.cs">
       <DependentUpon>ResolveProblems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\resolve\ResolveUploadImage.ashx.cs">
+      <DependentUpon>ResolveUploadImage.ashx</DependentUpon>
     </Compile>
     <Compile Include="web\submit\SubmitProblems.aspx.cs">
       <DependentUpon>SubmitProblems.aspx</DependentUpon>

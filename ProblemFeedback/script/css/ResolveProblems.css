@@ -86,7 +86,7 @@
 }
 
 .problem_imgDiv_img {
-    border: 1px solid #cbc9c9;
+    border: 0px solid #cbc9c9;
     border-radius: 5px;
     height: 100px;
     width: 100px;
@@ -95,6 +95,12 @@
     margin-left: 20px;
     margin-top: 20px;
 }
+    .problem_imgDiv_img img {
+        display: none;
+        border: 0px solid white;
+        height: 100px;
+        width: 100px;
+    }
 
 .problem_buttonDiv {
     height: 50px;
@@ -183,10 +189,18 @@
     #submit_imgDiv img {
         height: 80px;
         width: 80px;
+        border:0px solid white;
     }
 
 #submit_imgDiv {
     cursor: pointer;
+}
+
+#submit_imgDiv_view1_img, #submit_imgDiv_view2_img, #submit_imgDiv_view3_img {
+    height: 80px;
+    width: 80px;
+    border: 0px solid white;
+    display: none;
 }
 
 .resolve_imgDiv {
@@ -203,6 +217,7 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 30px;
+    cursor:pointer;
 }
 
     .resolve_btnDiv div {
@@ -219,3 +234,6 @@
         margin-top: 10px;
         border-radius: 5px;
     }
+#file {
+    display:none;
+}
