@@ -55,10 +55,6 @@
     cursor: pointer;
     background-color:white;
 }
-    .submitP_type_c:hover{
-        background-color: #808080;
-        color: white;
-    }
 
 .contentDiv {
     text-align: center;

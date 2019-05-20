@@ -2,16 +2,24 @@
     //问题类型点击事件
     $(".submitP_type_c").on("click", function () {
         if ($(this).css("background-color") == 'rgb(255, 255, 255)') {
+            for (var i = 1; i < 6; i++) {
+                $("#submitP_type" + i).css("color", "#808080");
+                $("#submitP_type" + i).css("background-color", "white");
+            }
             $(this).css("color", "white");
             $(this).css("background-color", "#808080");
         }
-        else if ($(this).css("background-color") == 'rgb(128, 128, 128)'){
+        else if ($(this).css("background-color") == 'rgb(128, 128, 128)') {
+            for (var i = 1; i < 6; i++) {
+                $("#submitP_type" + i).css("color", "#808080");
+                $("#submitP_type" + i).css("background-color", "white");
+            }
             $(this).css("color", "#808080");
             $(this).css("background-color", "white");
         }
     });
     //图片上传事件
-    $("#submit_imgDiv").on("click",function () {
+    $("#submit_imgDiv").on("click", function () {
         $("#file").click();
         var pathName = $("#file").val();
         var fileName = pathName.replace(/^.+?\\([^\\]+?)(\.[^\.\\]*?)?$/gi, "$1");
@@ -53,7 +61,7 @@
                                 if (data != "上传失败") {
                                     if (imgFlag == 0) {
                                         $('#submit_imgDiv_view1_img').attr("src", "../../img/uploadImgCache/" + data);
-                                        $('#submit_imgDiv_view1_img').css("display","inline");
+                                        $('#submit_imgDiv_view1_img').css("display", "inline");
                                     }
                                     if (imgFlag == 1) {
                                         $('#submit_imgDiv_view2_img').attr("src", "../../img/uploadImgCache/" + data);
@@ -85,7 +93,7 @@
         }
     });
     //图片点击查看事件
-    $(".submit_imgDiv").on("click",function () {
+    $(".submit_imgDiv").on("click", function () {
         if ($(this).css("display") != "none" && $(this).attr("id") != "submit_imgDiv") {
             var _this = $(this).attr("id");
             imgShow("#outerdiv", "#innerdiv", "#bigimg", _this);
@@ -97,30 +105,52 @@
         var content = $(".contentText_submitP").val();
         var person = $(".impDiv_person").val();
         var department = $(".impDiv_department").val();
+        var img = {};
         //判断类型
-        if (true) {
-
+        for (var i = 1; i < 6; i++) {
+            if ($("#submitP_type" + i).css("background-color") == 'rgb(128, 128, 128)') {
+                var type = $("#submitP_type" + i).children("span").text();
+                break;
+            }
         }
-        if (title && content && person) {
+        for (var i = 1; i < 4; i++) {
+            if ($("#submit_imgDiv_view" + i + "_img").attr("src") != "") {
+                var src = $("#submit_imgDiv_view" + i + "_img").attr("src");
+                img['var_'+i] = src.substring(25,src.length);
+            }
+            else {
+                img['var_' + i] = "";
+            }
+        }
+        var img1 = img['var_1'];
+        var img2 = img['var_2'];
+        var img3 = img['var_3'];
+        if (title!="" && content!="" && person!="") {
             $.ajax({
                 type: "post",
                 url: "SubmitProblems.aspx/SubmitClick",
                 contentType: "application/json; charset=utf-8",
-                data: "{'contents':'" + content + "','personName':'" + person + "','department':'" + department + "','imageUp1':'" + img1 + "','imageUp2':'" + img2 + "','imageUp3':'" + img3 + "'}",
+                data: "{'title':'" + title + "','type':'" + type + "','contents':'" + content + "','personName':'" + person + "','department':'" + department + "','imageUp1':'" + img1 + "','imageUp2':'" + img2 + "','imageUp3':'" + img3 + "'}",
                 dataType: "json",
                 success: function (msg) {
-                    alert("提交成功！");
-                    window.location.reload();
+                    if (msg.d == 1) {
+                        alert("提交成功！");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("数据异常！");
+                    }
                 },
                 error: function (err) {
-                    alert("数据库处理错误，保存失败！");
+                    alert("服务器错误！");
                 }
             });
         } else {
-            alert("反馈问题、反馈问题不能为空！");
+            alert("标题、反馈内容、姓名不能为空！");
         }
     });
 });
+//js日期格式转换
 function CurentTime() {
     var now = new Date();
 
@@ -141,45 +171,45 @@ function CurentTime() {
     clock += day;
     return (clock);
 }
+//图片预览
 function imgShow(outerdiv, innerdiv, bigimg, _this) {
-    var src = $("#"+_this+"_img").attr("src");//获取当前点击的pimg元素中的src属性  
-    $("#bigimg", parent.document).attr("src", src.substring(3));//设置#bigimg元素的src属性 
+    var src = $("#" + _this + "_img").attr("src");
+    $("#bigimg", parent.document).attr("src", src.substring(3));
 
-    /*获取当前点击图片的真实大小，并显示弹出层及大图*/
     $("<img/>").attr("src", src).load(function () {
-        var windowW = $(window, parent.document).width();//获取当前窗口宽度  
-        var windowH = $(window, parent.document).height();//获取当前窗口高度  
-        var realWidth = this.width;//获取图片真实宽度  
-        var realHeight = this.height;//获取图片真实高度  
+        var windowW = $(window, parent.document).width();
+        var windowH = $(window, parent.document).height();
+        var realWidth = this.width;
+        var realHeight = this.height;
         var imgWidth, imgHeight;
         var scale = 0.8;//缩放尺寸，当图片真实宽度和高度大于窗口宽度和高度时进行缩放  
 
-        if (realHeight > windowH * scale) {//判断图片高度  
-            imgHeight = windowH * scale;//如大于窗口高度，图片高度进行缩放  
+        if (realHeight > windowH * scale) {
+            imgHeight = windowH * scale;
             imgWidth = imgHeight
                 / realHeight * realWidth;// 等比例缩放宽度
-            if (imgWidth > windowW * scale) {//如宽度扔大于窗口宽度  
-                imgWidth = windowW * scale;//再对宽度进行缩放  
+            if (imgWidth > windowW * scale) {
+                imgWidth = windowW * scale;
             }
-        } else if (realWidth > windowW * scale) {//如图片高度合适，判断图片宽度  
-            imgWidth = windowW * scale;//如大于窗口宽度，图片宽度进行缩放  
-            imgHeight = imgWidth / realWidth * realHeight;// 等比例缩放高度
+        } else if (realWidth > windowW * scale) {
+            imgWidth = windowW * scale;
+            imgHeight = imgWidth / realWidth * realHeight;
         } else {//如果图片真实高度和宽度都符合要求，高宽不变  
             imgWidth = realWidth;
             imgHeight = realHeight;
         }
         $("#bigimg", parent.document).css("width", imgWidth);//以最终的宽度对图片缩放  
 
-        var w = (windowW - imgWidth) / 2;// 计算图片与窗口左边距
-        var h = (windowH - imgHeight) / 2;// 计算图片与窗口上边距
+        var w = (windowW - imgWidth) / 2;
+        var h = (windowH - imgHeight) / 2;
         $("#innerdiv", parent.document).css({
             "top": h,
             "left": w
         });//设置#innerdiv的top和left属性  
-        $("#outerdiv", parent.document).fadeIn("fast");//淡入显示#outerdiv及.pimg  
+        $("#outerdiv", parent.document).fadeIn("fast");
     });
 
-    $("#outerdiv", parent.document).click(function () {//再次点击淡出消失弹出层  
+    $("#outerdiv", parent.document).click(function () {
         $(this).fadeOut("fast");
     });
 }

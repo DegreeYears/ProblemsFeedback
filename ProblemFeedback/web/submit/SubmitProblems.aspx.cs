@@ -1,7 +1,11 @@
-﻿using System;
+﻿using ProblemFeedback.data;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
@@ -25,29 +29,52 @@ namespace ProblemFeedback.web.submit
         /// <param name="imageUp3"></param>
         /// <returns></returns>
         [WebMethod]
-        public static string SubmitClick(string contents, string personName, string department, string imageUp1, string imageUp2, string imageUp3)
+        public static int SubmitClick(string title,string type,string contents, string personName, string department, string imageUp1, string imageUp2, string imageUp3)
         {
-            SqlConnection con = null;
-            SqlCommand cmd = null;
-
-            string date = DateTime.Now.ToString("yyyy-MM-dd");
-            string info = "销售相关";
-            string conStr = @"server=.\sqlexpress;database=problemsSubmit;integrated security=true";
+            var p_date = DateTime.Now.ToString("yyyy-MM-dd");
+            DBHelper db = new DBHelper();
+            Hashtable hstable = new Hashtable();
+            hstable.Add("pInfo", type);
+            hstable.Add("pTitle", title);
+            hstable.Add("pContent", contents);
+            hstable.Add("pPerson", personName);
+            hstable.Add("pDepartment", department);
+            hstable.Add("pImage1", imageUp1);
+            hstable.Add("pImage2", imageUp2);
+            hstable.Add("pImage3", imageUp3);
+            hstable.Add("pSubmitDate", p_date);
+            hstable.Add("isResolve", "0");
+            hstable.Add("isSetting", "1");
+            hstable.Add("hotValue", "1");
+            int result = db.AddIdData(hstable);
+            //文件操作
             try
             {
-                using (con = new SqlConnection(conStr))
+                Page page = new Page();
+                string folder = DateTime.Now.ToString("yyyyMMdd");
+                string path1 = page.Server.MapPath(""); //submit物理路径D:\Development\VSProject - 副本\ProblemFeedback\img/20190520/
+                string path2 = path1.Substring(0,path1.Length-10)+ "img\\uploadImgCache\\";
+                string path3 = path1.Substring(0, path1.Length - 10) + "img\\uploadImg\\";
+                if (Directory.Exists(path2 + folder))
                 {
-                    con.Open();
-                    string sqlStr = "insert into problemsSubmit.dbo.ProblemsInfos values('" + info + "','" + contents + "','','','','" + personName + "','" + department + "','" + date + "')";
-                    cmd = new SqlCommand(sqlStr, con);
-                    return cmd.ExecuteNonQuery().ToString();
+                    DirectoryInfo dir = new DirectoryInfo(path2+folder);
+                    FileSystemInfo[] fileinfo = dir.GetFileSystemInfos();  //获取目录下（不包含子目录）的文件和子目录
+                    foreach (FileSystemInfo i in fileinfo)
+                    {
+                        if (!Directory.Exists(path3 + folder))
+                        {
+                            Directory.CreateDirectory(path3 + folder);
+                        }
+                        File.Copy(i.FullName, path3 +folder+ "\\" + i.Name, true);
+                        i.Delete();
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine(ex.Message);
-                return null;
+                return 0;
             }
+            return result;
         }
     }
 }
