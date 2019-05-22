@@ -170,11 +170,10 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53748</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50827/</IISUrl>
+          <IISUrl>http://192.168.124.7:8080/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://192.168.124.7:8080/</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

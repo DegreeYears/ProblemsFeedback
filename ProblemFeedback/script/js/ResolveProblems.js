@@ -84,7 +84,7 @@
             //获得文件对象
             var upFile = $("#file")[0].files[0];
             if (fileName == "" || fileName == null) {
-                alert("上传文件不能为空！");
+                //alert("上传文件不能为空！");
             }
             else {
                 if (img3 == "" || img3 == null) {
@@ -174,7 +174,7 @@ function UpdateView(id) {
                             $(".problem_titleDiv_2_left_3").children("span").html("未解决");
                         }
                         $(".problem_titleDiv_2_left_2").children("span").html(json[index].hotvalue);
-                        $(".problem_titleDiv_2_left_1").html((json[index].date).substring(0, 9));
+                        $(".problem_titleDiv_2_left_1").html((json[index].date).substring(0, 10));
                         $(".contentText_submitP").val(json[index].r_content);
                         $(".contentText_submitP").attr("readonly", true)
                         $(".problem_contentDiv").html(json[index].content);

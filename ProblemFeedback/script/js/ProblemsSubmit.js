@@ -105,7 +105,7 @@
         }
     });
     //页面提交事件
-    $(".sumbitButton_div").click(function () {
+    $(".sumbitButton_div").on("click", function () {
         var title = $(".titleText_submitP").val();
         var content = $(".contentText_submitP").val();
         var person = $(".impDiv_person").val();

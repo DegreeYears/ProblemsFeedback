@@ -18,12 +18,6 @@ namespace ProblemFeedback.web.resolve
         {
 
         }
-        [WebMethod]
-        public static int IsResolve()
-        {
-            return 1;
-
-        }
         /// <summary>
         /// 更新页面
         /// </summary>
@@ -46,7 +40,15 @@ namespace ProblemFeedback.web.resolve
             ds = db.SelectData(strSql);
             if (ds.Tables[0].Rows[0][10].ToString() == "1")
             {
-                var strSql2 = "select * from ProblemsResolveInfos where pId =" + id;
+                var strSql2 = "";
+                if (id == 0)
+                {
+                    strSql2 = "select * from problemsSubmit.dbo.ProblemsResolveInfos where pId = (select top 1 id from problemsSubmit.dbo.ProblemsInfos where isSetting =1 order by hotValue DESC)";
+                }
+                else
+                {
+                    strSql2 = "select * from ProblemsResolveInfos where pId =" + id;
+                }
                 DataSet ds2 = new DataSet();
                 ds2 = db.SelectData(strSql2);
                 dataStr = dataStr + "[{" +

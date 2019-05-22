@@ -38,22 +38,24 @@
     height: 70px;
     margin-left: 40px;
     margin-right: 40px;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
-.submitP_type_c{
+.submitP_type_c {
     float: left;
     margin-right: 30px;
-    width: 100px;
+    width: 15%;
     border: 1px solid #cbc9c9;
     border-radius: 5px;
     text-align: center;
     font-size: 15px;
     color: #808080;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     cursor: pointer;
-    background-color:white;
+    background-color: white;
 }
 
 .contentDiv {
