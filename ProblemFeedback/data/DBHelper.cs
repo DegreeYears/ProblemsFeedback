@@ -15,7 +15,7 @@ namespace ProblemFeedback.data
     {
         private SqlConnection con = null;
         private SqlCommand cmd = null;
-        private string conStr = @"server=.\sqlexpress;database=problemsSubmit;integrated security=true";
+        private string conStr = @"server=192.168.0.185;database=problemsSubmit;uid=sa;password=Erp1";
         /// <summary>
         /// 根据查询语句查询表数据结果集
         /// </summary>

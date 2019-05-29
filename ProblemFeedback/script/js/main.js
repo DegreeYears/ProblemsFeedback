@@ -43,27 +43,17 @@
     });
     //主页搜索实现
     $(".titleFindImg").on("click", function () {
-        if ($(".titleFindText").val() = "") {
+        if ($(".titleFindText").val() == "") {
             alert("搜索内容为空！");
         }
         else {
-            var str1 = "热门排行";
-            var str2 = "提交问题反馈问题";
-            var str3 = "解答问题解决问题";
-            var str4 = "问题列表问题汇总所有问题查找";
-            var str5 = "其他";
-            var reg = new RegExp($(".titleFindText").val());
-            if (reg.test(str1)) {
-
-            } else if (reg.test(str2)) {
-
-            } else if (reg.test(str3)) {
-
-            } else if (reg.test(str4)) {
-
-            } else if (reg.test(str5)) {
-
+            var findStr = $(".titleFindText").val();
+            for (var i = 1; i < 6; i++) {
+                $("#oneList" + i).css("background-color", "#26212f");
             }
+            $("#oneList4").css("background-color", "#ee5236");
+            $("#oneList4").css("color", "white");
+            $('.mainIframe').attr('src', 'summary/ProblemsSummary.aspx?finStr=' + findStr);
         }
     });
 });

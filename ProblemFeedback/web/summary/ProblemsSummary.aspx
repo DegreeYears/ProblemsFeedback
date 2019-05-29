@@ -25,7 +25,7 @@
                     <div class="findDiv">
                         <span>
                             <input type="text" maxlength="35" placeholder="搜索"/></span>
-                        <img src="../../img/find.png" />
+                        <img class="text-fing-list" src="../../img/find.png" />
                     </div>
                 </div>
             </div>

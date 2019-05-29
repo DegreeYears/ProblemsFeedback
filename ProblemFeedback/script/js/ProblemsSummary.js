@@ -1,4 +1,5 @@
 ﻿$(function () {
+    //var findStr = getQueryStr();
     refreshView("0");
     $.ajax({
         type: "POST",
@@ -22,13 +23,35 @@
             }
         }
     });
-    
+    //主页面查询
+    //if (findStr != null) {
+    //    var type = ["采购", "销售", "生产", "库存"];
+    //    var isCz = -1;
+    //    var nowType = "";
+    //    for (var i = 0; i < type.length; i++) {
+    //        isCz = findStr.indexOf(type[i]);
+    //        if (isCz != -1) {
+    //            nowType = type[i];
+    //            break;
+    //        }
+    //    }
+    //    alert("正在完善！");
+    //}
+    //$(".findDiv").children("img").on("click", function () {
+    //    var findText = $(".findDiv").children("input").val();
+    //    if (findText == "") {
+    //        alert("搜索内容为空！");
+    //    }
+    //    else {
+    //        alert("正在完善！");
+    //    }
+    //});
     $(".typeDiv").children("div").on("click", function () {
         if ($(this).css("background-color") == 'rgb(128, 128, 128)') {
             $(this).css("background-color", "white");
             $(this).css("color", "#808080");
         }
-        else if ($(this).css("background-color") == 'rgb(255, 255, 255)'){
+        else if ($(this).css("background-color") == 'rgb(255, 255, 255)') {
             if ($(this).text() == "全部") {
                 for (var i = 2; i < 7; i++) {
                     $(".submitP_type" + i).css("background-color", "white");
@@ -99,9 +122,9 @@ function refreshView(flag) {
                     $("#hotP_list").append('<li id="hotP_list_li' + json[index].id + '">' + json[index].title + '<div id="hotP_list_li_div' + index + '">' + json[index].person + '<br/>' + json[index].date + '</div></li>');
                 });
                 //$(window.parent.document).find(".mainIframe").load(function () {
-                    var iframeHeight = $(window.parent.document).find(".mainIframe").contents().find("body").height() + 60;
-                    $(window.parent.document).find(".mainIframe").height(iframeHeight);
-                    $(window.parent.document).find("#rightDiv").height(iframeHeight + 40);
+                var iframeHeight = $(window.parent.document).find(".mainIframe").contents().find("body").height() + 60;
+                $(window.parent.document).find(".mainIframe").height(iframeHeight);
+                $(window.parent.document).find("#rightDiv").height(iframeHeight + 40);
                 $(window.parent.document).find("#contentDiv").height(iframeHeight + 60);
                 var a = $(window.parent.document).find(".mainIframe").height();
                 var b = $(window.parent.document).find(".rightDiv").height();
