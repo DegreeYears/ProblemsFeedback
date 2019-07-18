@@ -53,7 +53,7 @@
             }
             $("#oneList4").css("background-color", "#ee5236");
             $("#oneList4").css("color", "white");
-            $('.mainIframe').attr('src', 'summary/ProblemsSummary.aspx?finStr=' + findStr);
+            $('.mainIframe').attr('src', 'summary/ProblemsSummary.aspx?findStr=' + findStr);
         }
     });
 });

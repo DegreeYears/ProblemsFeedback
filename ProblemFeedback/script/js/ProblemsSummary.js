@@ -1,5 +1,5 @@
 ﻿$(function () {
-    //var findStr = getQueryStr();
+    var findStr = getQueryStr();
     refreshView("0");
     $.ajax({
         type: "POST",
@@ -24,84 +24,66 @@
         }
     });
     //主页面查询
-    //if (findStr != null) {
-    //    var type = ["采购", "销售", "生产", "库存"];
-    //    var isCz = -1;
-    //    var nowType = "";
-    //    for (var i = 0; i < type.length; i++) {
-    //        isCz = findStr.indexOf(type[i]);
-    //        if (isCz != -1) {
-    //            nowType = type[i];
-    //            break;
-    //        }
-    //    }
-    //    alert("正在完善！");
-    //}
-    //$(".findDiv").children("img").on("click", function () {
-    //    var findText = $(".findDiv").children("input").val();
-    //    if (findText == "") {
-    //        alert("搜索内容为空！");
-    //    }
-    //    else {
-    //        alert("正在完善！");
-    //    }
-    //});
-    $(".typeDiv").children("div").on("click", function () {
-        if ($(this).css("background-color") == 'rgb(128, 128, 128)') {
-            $(this).css("background-color", "white");
-            $(this).css("color", "#808080");
-        }
-        else if ($(this).css("background-color") == 'rgb(255, 255, 255)') {
-            if ($(this).text() == "全部") {
-                for (var i = 2; i < 7; i++) {
-                    $(".submitP_type" + i).css("background-color", "white");
-                    $(".submitP_type" + i).css("color", "#808080");
+    if (findStr != null) {
+        refreshView("url," + findStr);
+    } else {
+        $(".typeDiv").children("div").on("click", function () {
+            if ($(this).css("background-color") == 'rgb(128, 128, 128)') {
+                $(this).css("background-color", "white");
+                $(this).css("color", "#808080");
+            }
+            else if ($(this).css("background-color") == 'rgb(255, 255, 255)') {
+                if ($(this).text() == "全部") {
+                    for (var i = 2; i < 7; i++) {
+                        $(".submitP_type" + i).css("background-color", "white");
+                        $(".submitP_type" + i).css("color", "#808080");
+                    }
+                    $(".submitP_type1").css("background-color", "#808080");
+                    $(".submitP_type1").css("color", "white");
+                } else if ($(this).text() == "已解决") {
+                    $(".submitP_type8").css("background-color", "white");
+                    $(".submitP_type8").css("color", "#808080");
+                    $(".submitP_type7").css("background-color", "#808080");
+                    $(".submitP_type7").css("color", "white");
+                } else if ($(this).text() == "未解决") {
+                    $(".submitP_type7").css("background-color", "white");
+                    $(".submitP_type7").css("color", "#808080");
+                    $(".submitP_type8").css("background-color", "#808080");
+                    $(".submitP_type8").css("color", "white");
                 }
-                $(".submitP_type1").css("background-color", "#808080");
-                $(".submitP_type1").css("color", "white");
-            } else if ($(this).text() == "已解决") {
-                $(".submitP_type8").css("background-color", "white");
-                $(".submitP_type8").css("color", "#808080");
-                $(".submitP_type7").css("background-color", "#808080");
-                $(".submitP_type7").css("color", "white");
-            } else if ($(this).text() == "未解决") {
-                $(".submitP_type7").css("background-color", "white");
-                $(".submitP_type7").css("color", "#808080");
-                $(".submitP_type8").css("background-color", "#808080");
-                $(".submitP_type8").css("color", "white");
+                else {
+                    $(".submitP_type1").css("background-color", "white");
+                    $(".submitP_type1").css("color", "#808080");
+                    $(this).css("background-color", "#808080");
+                    $(this).css("color", "white");
+                }
             }
-            else {
-                $(".submitP_type1").css("background-color", "white");
-                $(".submitP_type1").css("color", "#808080");
-                $(this).css("background-color", "#808080");
-                $(this).css("color", "white");
+            //判断类型条件
+            var flag = "";
+            for (var i = 1; i < 7; i++) {
+                if ($(".submitP_type" + i).css("background-color") == 'rgb(128, 128, 128)') {
+                    flag += $(".submitP_type" + i).text() + ",";
+                }
             }
-        }
-        //判断类型条件
-        var flag = "";
-        for (var i = 1; i < 7; i++) {
-            if ($(".submitP_type" + i).css("background-color") == 'rgb(128, 128, 128)') {
-                flag += $(".submitP_type" + i).text() + ",";
-            }
-        }
-        if (flag != "") {
-            flag = flag.substring(0, flag.length - 1);
-        }
-        if ($(".submitP_type7").css("background-color") == 'rgb(128, 128, 128)') {
             if (flag != "") {
-                flag += ",已解决";
-            } else {
-                flag += "已解决";
+                flag = flag.substring(0, flag.length - 1);
             }
-        } else if ($(".submitP_type8").css("background-color") == 'rgb(128, 128, 128)') {
-            if (flag != "") {
-                flag += ",未解决";
-            } else {
-                flag += "未解决";
+            if ($(".submitP_type7").css("background-color") == 'rgb(128, 128, 128)') {
+                if (flag != "") {
+                    flag += ",已解决";
+                } else {
+                    flag += "已解决";
+                }
+            } else if ($(".submitP_type8").css("background-color") == 'rgb(128, 128, 128)') {
+                if (flag != "") {
+                    flag += ",未解决";
+                } else {
+                    flag += "未解决";
+                }
             }
-        }
-        refreshView(flag);
-    });
+            refreshView(flag);
+        });
+    }
 });
 function refreshView(flag) {
     $.ajax({
@@ -142,4 +124,10 @@ function refreshView(flag) {
             }
         }
     });
+}
+//解析url
+function getQueryStr() {
+    var args = location.search;
+    var arg = args.split("=");
+    return arg[1];
 }

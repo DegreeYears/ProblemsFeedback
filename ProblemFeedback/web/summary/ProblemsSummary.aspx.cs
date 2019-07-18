@@ -58,52 +58,60 @@ namespace ProblemFeedback.web.summary
             else
             {
                 var str = flag.Split(',');
-                if (str[str.Length - 1] == "已解决")
+                if (str[0] == "url")
                 {
-                    if (str[0] == "全部" || str[0] == "已解决")
-                    {
-                        sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 order by pSubmitDate DESC ";
-                    }
-                    else
-                    {
-                        sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 and (";
-                        for (int i = 0; i < str.Length - 1; i++)
-                        {
-                            sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
-                        }
-                        sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
-                    }
-                }
-                else if (str[str.Length - 1] == "未解决")
-                {
-                    if (str[0] == "全部" || str[0] =="未解决")
-                    {
-                        sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 order by pSubmitDate DESC ";
-                    }
-                    else
-                    {
-                        sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 and (";
-                        for (int i = 0; i < str.Length - 1; i++)
-                        {
-                            sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
-                        }
-                        sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
-                    }
+                    flag = flag.Replace("url,", "");
+                    sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where pTitle like '%" + flag + "%' order by pSubmitDate DESC ";
                 }
                 else
                 {
-                    if (str[0] =="全部")
+                    if (str[str.Length - 1] == "已解决")
                     {
-                        sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 order by pSubmitDate DESC";
+                        if (str[0] == "全部" || str[0] == "已解决")
+                        {
+                            sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 order by pSubmitDate DESC ";
+                        }
+                        else
+                        {
+                            sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 and (";
+                            for (int i = 0; i < str.Length - 1; i++)
+                            {
+                                sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                            }
+                            sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
+                        }
+                    }
+                    else if (str[str.Length - 1] == "未解决")
+                    {
+                        if (str[0] == "全部" || str[0] == "未解决")
+                        {
+                            sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 order by pSubmitDate DESC ";
+                        }
+                        else
+                        {
+                            sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 and (";
+                            for (int i = 0; i < str.Length - 1; i++)
+                            {
+                                sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                            }
+                            sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
+                        }
                     }
                     else
                     {
-                        sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and (";
-                        for (int i = 0; i <= str.Length - 1; i++)
+                        if (str[0] == "全部")
                         {
-                            sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                            sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 order by pSubmitDate DESC";
                         }
-                        sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
+                        else
+                        {
+                            sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and (";
+                            for (int i = 0; i <= str.Length - 1; i++)
+                            {
+                                sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                            }
+                            sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
+                        }
                     }
                 }
             }
