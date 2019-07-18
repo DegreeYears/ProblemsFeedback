@@ -177,7 +177,7 @@ function UpdateView(id) {
                         $(".problem_titleDiv_2_left_1").html((json[index].date).substring(0, 10));
                         $(".contentText_submitP").val(json[index].r_content);
                         $(".contentText_submitP").attr("readonly", true)
-                        $(".problem_contentDiv").html(json[index].content);
+                        $(".problem_contentDiv").children("p").html(json[index].content);
                         if (json[index].image1 != "") {
                             $("#problem_imgDiv_img_1").children("img").attr("src", "../../img/uploadImg/" + json[index].image1);
                             $('#problem_imgDiv_img_1_img').css("display", "inline");
@@ -214,7 +214,7 @@ function UpdateView(id) {
                             $(".problem_titleDiv_2_left_3").children("span").html("未解决");
                         }
                         $(".problem_titleDiv_2_left_2").children("span").html(json[index].hotvalue);
-                        $(".problem_titleDiv_2_left_1").html((json[index].date).substring(0,9));
+                        $(".problem_titleDiv_2_left_1").html((json[index].date).substring(0,10));
                         $(".problem_contentDiv").html(json[index].content);
                         if (json[index].image1 != "") {
                             $("#problem_imgDiv_img_1").children("img").attr("src", "../../img/uploadImg/" + json[index].image1);
@@ -254,30 +254,20 @@ function imgShow(outerdiv, innerdiv, bigimg, _this) {
         var realWidth = this.width;
         var realHeight = this.height;
         var imgWidth, imgHeight;
-        var scale = 0.8;//缩放尺寸，当图片真实宽度和高度大于窗口宽度和高度时进行缩放  
 
-        if (realHeight > windowH * scale) {
-            imgHeight = windowH * scale;
-            imgWidth = imgHeight
-                / realHeight * realWidth;// 等比例缩放宽度
-            if (imgWidth > windowW * scale) {
-                imgWidth = windowW * scale;
-            }
-        } else if (realWidth > windowW * scale) {
-            imgWidth = windowW * scale;
-            imgHeight = imgWidth / realWidth * realHeight;
-        } else {//如果图片真实高度和宽度都符合要求，高宽不变  
-            imgWidth = realWidth;
-            imgHeight = realHeight;
-        }
-        $("#bigimg", parent.document).css("width", imgWidth);//以最终的宽度对图片缩放  
-
+        imgWidth = realWidth;
+        imgHeight = realHeight;
+        $("#bigimg", parent.document).css("width", imgWidth*0.85); 
         var w = (windowW - imgWidth) / 2;
         var h = (windowH - imgHeight) / 2;
+        if (w < 0 && h < 0) {
+            w = 5;
+            h = 5;
+        }
         $("#innerdiv", parent.document).css({
             "top": h,
             "left": w
-        });//设置#innerdiv的top和left属性  
+        });
         $("#outerdiv", parent.document).fadeIn("fast");
     });
 

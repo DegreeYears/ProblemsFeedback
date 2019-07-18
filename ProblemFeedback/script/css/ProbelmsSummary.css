@@ -37,7 +37,7 @@
     float: left;
 }
 
-.findDiv {
+/*.findDiv {
     padding: 0px;
     float: right;
     margin-top: 15px;
@@ -46,8 +46,8 @@
     border: 1px solid #808080;
     border-radius:3px;
     color: #e3e0e0;
-}
-.findDiv img {
+}*/
+/*.findDiv img {
     float:right;
     width: 20px;
     height: 20px;
@@ -61,10 +61,10 @@
     outline:none;
     padding-left:10px;
     color:#808080;
-}
+}*/
 .typeDiv {
     height: 30px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 20px;
     margin-right: 60px;
@@ -89,19 +89,21 @@
     min-height: 500px;
     margin-left: 20px;
     margin-right: 60px;
-    margin-top: 20px;
+    margin-top: 30px;
     height: auto;
 }
 li {
-    height: 40px;
+    height: 50px;
     border-bottom: 1px solid #cac6c6;
     list-style-type: none;
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom:5px;
     font-family: SimHei;
     font-size: 16px;
     cursor:pointer;
+    width:100%;
 }
 
     li:hover {
@@ -110,10 +112,13 @@ li {
     }
 
     li div {
-        position:relative;
-        top:-8px;
+        margin-top:-25px;
         float:right;
         font-size:13px;
+        margin-left:10px;
+    }
+    li p {
+        margin-right:80px;
     }
 /*.listTitle div {
     float: left;

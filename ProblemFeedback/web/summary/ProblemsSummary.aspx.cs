@@ -53,7 +53,7 @@ namespace ProblemFeedback.web.summary
             string sqlStr = "";
             if (flag == "0")
             {
-                sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 order by pSubmitDate DESC";
+                sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 order by pSubmitDate DESC";
             }
             else
             {
@@ -62,11 +62,11 @@ namespace ProblemFeedback.web.summary
                 {
                     if (str[0] == "全部" || str[0] == "已解决")
                     {
-                        sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 order by pSubmitDate DESC ";
+                        sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 order by pSubmitDate DESC ";
                     }
                     else
                     {
-                        sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 and (";
+                        sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 and (";
                         for (int i = 0; i < str.Length - 1; i++)
                         {
                             sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
@@ -78,11 +78,11 @@ namespace ProblemFeedback.web.summary
                 {
                     if (str[0] == "全部" || str[0] =="未解决")
                     {
-                        sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 order by pSubmitDate DESC ";
+                        sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 order by pSubmitDate DESC ";
                     }
                     else
                     {
-                        sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 and (";
+                        sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 and (";
                         for (int i = 0; i < str.Length - 1; i++)
                         {
                             sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
@@ -94,11 +94,11 @@ namespace ProblemFeedback.web.summary
                 {
                     if (str[0] =="全部")
                     {
-                        sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 order by pSubmitDate DESC";
+                        sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 order by pSubmitDate DESC";
                     }
                     else
                     {
-                        sqlStr = "select  convert(char(10),GetDate(),120) as pp ,* from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and (";
+                        sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and (";
                         for (int i = 0; i <= str.Length - 1; i++)
                         {
                             sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
@@ -115,7 +115,7 @@ namespace ProblemFeedback.web.summary
             {
                 for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
                 {
-                    dataStr = dataStr + "{person:'" + dataSet.Tables[0].Rows[i][8].ToString() + "',title:" + "'" + dataSet.Tables[0].Rows[i][3].ToString() + "',date:" + "'" + dataSet.Tables[0].Rows[i][0].ToString() + "',id:'" + dataSet.Tables[0].Rows[i][1] + "'}";
+                    dataStr = dataStr + "{person:'" + dataSet.Tables[0].Rows[i][7].ToString() + "',title:" + "'" + dataSet.Tables[0].Rows[i][2].ToString() + "',date:" + "'" + dataSet.Tables[0].Rows[i][9].ToString().Substring(0,10) + "',id:'" + dataSet.Tables[0].Rows[i][0] + "'}";
                     if (i != dataSet.Tables[0].Rows.Count - 1)
                     {
                         dataStr = dataStr + ",";

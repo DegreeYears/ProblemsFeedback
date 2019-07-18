@@ -119,7 +119,7 @@ function refreshView(flag) {
                 var json = eval("(" + data1 + ")");
                 $("#hotP_list").children("li").remove();
                 $.each(json, function (index, item) {
-                    $("#hotP_list").append('<li id="hotP_list_li' + json[index].id + '">' + json[index].title + '<div id="hotP_list_li_div' + index + '">' + json[index].person + '<br/>' + json[index].date + '</div></li>');
+                    $("#hotP_list").append('<li id="hotP_list_li' + json[index].id + '">' +'<p>'+ json[index].title +'</p>'+ '<div id="hotP_list_li_div' + index + '">' + json[index].person + '<br/>' + json[index].date + '</div></li>');
                 });
                 //$(window.parent.document).find(".mainIframe").load(function () {
                 var iframeHeight = $(window.parent.document).find(".mainIframe").contents().find("body").height() + 60;

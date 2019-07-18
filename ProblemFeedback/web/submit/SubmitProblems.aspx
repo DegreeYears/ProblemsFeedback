@@ -26,7 +26,7 @@
                 <div class="submitP_type_c" id="submitP_type5"><span>其他问题</span></div>
             </div>
             <div class="contentDiv">
-                <textarea class="contentText_submitP" placeholder="请描述遇到的问题或者建议" name="内容" maxlength="500" onchange="this.value=this.value.substring(0, 500)" onkeydown="this.value=this.value.substring(0, 500)" onkeyup="this.value=this.value.substring(0, 500)"></textarea>
+                <textarea class="contentText_submitP" placeholder="请描述遇到的问题或者建议" name="内容" maxlength="350" ></textarea>
             </div>
             <div class="imgDiv">
                 <input type="file" id="file" name="file" runat="server" />

@@ -22,11 +22,11 @@
                         <div class="titile_pCountDiv_2_1_2">历史问题：10</div>
                         <div class="titile_pCountDiv_2_1_3">已解决：4</div>                        
                     </div>   
-                    <div class="findDiv">
+                   <%-- <div class="findDiv">
                         <span>
                             <input type="text" maxlength="35" placeholder="搜索"/></span>
                         <img class="text-fing-list" src="../../img/find.png" />
-                    </div>
+                    </div>--%>
                 </div>
             </div>
             <div class="typeDiv">

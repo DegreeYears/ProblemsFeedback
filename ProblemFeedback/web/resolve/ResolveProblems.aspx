@@ -27,7 +27,9 @@
                     </div>
                 </div>
                 <div class="problem_contentDiv">
-                    我是问题详细描述
+                    <p>
+                        我是问题详细描述
+                    </p>
                 </div>
                 <div class="problem_imgDiv">
                     <div class="problem_imgDiv_img" id="problem_imgDiv_img_1"><img id="problem_imgDiv_img_1_img" src=""/></div>
