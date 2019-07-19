@@ -76,7 +76,7 @@ namespace ProblemFeedback.web.summary
                             sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=1 and (";
                             for (int i = 0; i < str.Length - 1; i++)
                             {
-                                sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                                sqlStr = sqlStr + "pInfo like" + "'%" + str[i].ToString() + "%' " + "or ";
                             }
                             sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
                         }
@@ -92,7 +92,7 @@ namespace ProblemFeedback.web.summary
                             sqlStr = "select  * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and isResolve=0 and (";
                             for (int i = 0; i < str.Length - 1; i++)
                             {
-                                sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                                sqlStr = sqlStr + "pInfo like" + "'%" + str[i].ToString() + "%' " + "or ";
                             }
                             sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
                         }
@@ -108,7 +108,7 @@ namespace ProblemFeedback.web.summary
                             sqlStr = "select * from problemsSubmit.dbo.ProblemsInfos  where isSetting=1 and (";
                             for (int i = 0; i <= str.Length - 1; i++)
                             {
-                                sqlStr = sqlStr + "pInfo=" + "'" + str[i].ToString() + "' " + "or ";
+                                sqlStr = sqlStr + "pInfo like" + "'%" + str[i].ToString() + "%' " + "or ";
                             }
                             sqlStr = sqlStr.Substring(0, sqlStr.Length - 3) + ") order by pSubmitDate DESC";
                         }
